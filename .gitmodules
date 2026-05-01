@@ -1,3 +1,6 @@
 [submodule "lib/system"]
 	path = lib/system
 	url = https://github.com/whoahq/system
+[submodule "vendor/StormLib"]
+	path = vendor/StormLib
+	url = https://github.com/Purplesmaug96/StormLib.git
