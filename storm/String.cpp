@@ -240,7 +240,7 @@ char* STORMAPI SStrChr(char* string, char search) {
     return string;
 }
 
-const char* STORMAPI SStrChr(const char* string, char search) {
+const char* STORMAPI CONST_SStrChr(const char* string, char search) {
     STORM_VALIDATE_BEGIN;
     STORM_VALIDATE(string);
     STORM_VALIDATE_END;
@@ -289,7 +289,7 @@ char* STORMAPI SStrChrR(char* string, char search) {
     return result;
 }
 
-const char* STORMAPI SStrChrR(const char* string, char search) {
+const char* STORMAPI CONST_SStrChrR(const char* string, char search) {
     STORM_VALIDATE_BEGIN;
     STORM_VALIDATE(string);
     STORM_VALIDATE_END;
