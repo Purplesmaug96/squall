@@ -66,4 +66,10 @@ uint32_t STORMAPI SStrToUnsigned(const char* string);
 
 void STORMAPI SStrUpper(char* string);
 
+// Note: the return values here differ from D2MOO, but they make more sense to me.
+
+char* STORMAPI SStrDup(char* pStr);
+
+char* STORMAPI SStrNCat(char* pBase, const char* pAppend, int nMaxLength);
+
 #endif

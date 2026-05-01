@@ -236,10 +236,6 @@ void SRgn539f() { printf("Stubbed function %s called\n", "SRgn539f"); }
 void SRgn540f() { printf("Stubbed function %s called\n", "SRgn540f"); }
 void SRgnCreateRegion() { printf("Stubbed function %s called\n", "SRgnCreateRegion"); }
 void SRgnDeleteRegion() { printf("Stubbed function %s called\n", "SRgnDeleteRegion"); }
-// void SStrChr() {}
-// void SStrChrR() {}
-void SStrDup() { printf("Stubbed function %s called\n", "SStrDup"); }
-void SStrNCat() { printf("Stubbed function %s called\n", "SStrNCat"); }
 void SStrSearch() { printf("Stubbed function %s called\n", "SStrSearch"); }
 void SStrToInt64() { printf("Stubbed function %s called\n", "SStrToInt64"); }
 void STrans446() { printf("Stubbed function %s called\n", "STrans446"); }
