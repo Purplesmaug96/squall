@@ -266,10 +266,10 @@ const char* STORMAPI SStrChrBidir(const char* string, char search, int32_t rever
     STORM_VALIDATE_END;
 
     if (reverse) {
-        return SStrChrR(string, search);
+        return CONST_SStrChrR(string, search);
     }
     else {
-        return SStrChr(string, search);
+        return CONST_SStrChr(string, search);
     }
 }
 
