@@ -260,6 +260,8 @@ const char* STORMAPI CONST_SStrChr(const char* string, char search) {
     return string;
 }
 
+const char* STORMAPI CONST_SStrChrR(const char* string, char search);
+
 const char* STORMAPI SStrChrBidir(const char* string, char search, int32_t reverse) {
     STORM_VALIDATE_BEGIN;
     STORM_VALIDATE(string);
@@ -649,13 +651,13 @@ void STORMAPI SStrTokenize(const char** string, char* buffer, size_t bufferchars
     STORM_VALIDATE(whitespace);
     STORM_VALIDATE_END_VOID;
 
-    int32_t checkquotes = SStrChr(whitespace, '"') != nullptr;
+    int32_t checkquotes = CONST_SStrChr(whitespace, '"') != nullptr;
 
     int32_t inquotes = 0;
     int32_t usedquotes = 0;
     const char* currsource = *string;
 
-    while (*currsource && SStrChr(whitespace, *currsource)) {
+    while (*currsource && CONST_SStrChr(whitespace, *currsource)) {
         if (checkquotes && *currsource == '"') {
             usedquotes = 1;
             inquotes = 1;
@@ -684,7 +686,7 @@ void STORMAPI SStrTokenize(const char** string, char* buffer, size_t bufferchars
             }
         }
         else {
-            if (!inquotes && SStrChr(whitespace, *currsource)) {
+            if (!inquotes && CONST_SStrChr(whitespace, *currsource)) {
                 currsource++;
                 break;
             }

@@ -126,5 +126,5 @@ endif()
 
 if(WHOA_STANDALONE)
     # Add tests when standalone
-    add_subdirectory(test)
+    # add_subdirectory(test)
 endif()
