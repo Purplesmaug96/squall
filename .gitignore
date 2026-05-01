@@ -1,11 +1,13 @@
 .DS_Store
 CMakeSettings.json
+CMakeCache.txt
 .idea/
 .vscode/
 .vs/
 
-/build
-/build_*
-/cmake-build-*
-/dist
-/out
+build/
+build_*/
+cmake-build-*/
+dist/
+out/
+
