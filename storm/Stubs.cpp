@@ -1,274 +1,275 @@
+#include <stdio.h>
 #include "Stubs.hpp"
 
-void Ordinal393() {}
-void SBigFindPrime() {}
-void SBigFromStream() {}
-void SBigGcd() {}
-void SBigInvMod() {}
-void SBigIsPrime() {}
-void SBigMulMod() {}
-void SBigPow() {}
-void SBigRand() {}
-void SBigSet2Exp() {}
-void SBigSetOne() {}
-void SBigSetZero() {}
-void SBigToBinaryArray() {}
-void SBigToBinaryPtr() {}
-void SBigToStrArray() {}
-void SBigToStrBuffer() {}
-void SBigToStrPtr() {}
-void SBigToStreamArray() {}
-void SBigToStreamBuffer() {}
-void SBigToStreamPtr() {}
-void SBltGetSCode() {}
-void SBltROP3() {}
-void SBltROP3Clipped() {}
-void SBltROP3Tiled() {}
-void SBmpAllocLoadImage() {}
-void SBmpDecodeImage() {}
-void SBmpLoadImage() {}
-void SBmpSaveImage() {}
-void SBmpSaveImageEx() {}
-void SCmdGetBool() {}
-void SCmdGetNum() {}
-void SCmdGetString() {}
-void SCmdProcess() {}
-void SCmdProcessCommandLine() {}
-void SCmdRegisterArgList() {}
-void SCmdRegisterArgument() {}
-void SCmdStringExists() {}
-void SCodeCompile() {}
-void SCodeDelete() {}
-void SCodeExecute() {}
-void SCodeGetPseudocode() {}
-void SDlgBeginPaint() {}
-void SDlgBltToWindowE() {}
-void SDlgBltToWindowI() {}
-void SDlgCheckTimers() {}
-void SDlgCreateDialogIndirectParam() {}
-void SDlgCreateDialogParam() {}
-void SDlgDefDialogProc() {}
-void SDlgDialogBoxIndirectParam() {}
-void SDlgDialogBoxParam() {}
-void SDlgDrawBitmap() {}
-void SDlgEndDialog() {}
-void SDlgEndPaint() {}
-void SDlgSetBaseFont() {}
-void SDlgSetBitmapE() {}
-void SDlgSetBitmapI() {}
-void SDlgSetControlBitmaps() {}
-void SDlgSetCursor() {}
-void SDlgSetSystemCursor() {}
-void SDlgUpdateCursor() {}
-void SDlgSetLocale() {}
-void SDlgSetTimer() {}
-void SDlgKillTimer() {}
-void SDrawAutoInitialize() {}
-void SDrawCaptureScreen() {}
-void SDrawClearSurface() {}
-void SDrawDestroy() {}
-void SDrawFlipPage() {}
-void SDrawGetFrameWindow() {}
-void SDrawGetObjects() {}
-void SDrawGetScreenSize() {}
-void SDrawGetServiceLevel() {}
-void SDrawLockSurface() {}
-void SDrawManualInitialize() {}
-void SDrawMessageBox() {}
-void SDrawPostClose() {}
-void SDrawRealizePalette() {}
-void SDrawSelectGdiSurface() {}
-void SDrawUnlockSurface() {}
-void SDrawUpdatePalette() {}
-void SDrawUpdateScreen() {}
-void SDrawWaitForVerticalBlank() {}
-void SErrRegisterHandler() {}
-void SErrRegisterMessageSource() {}
-void SErrReportResourceLeak() {}
-void SErrUnregisterHandler() {}
-void SErrAuthenticateArchive() {}
-void SErrReportNamedResourceLeak() {}
-void SFileAuthenticateArchive() {}
-void SFileCancelRequest() {}
-void SFileDdaInitialize() {}
-void SFileDdaBegin() {}
-void SFileDdaBeginEx() {}
-void SFileDdaDestroy() {}
-void SFileDdaEnd() {}
-void SFileDdaGetPos() {}
-void SFileDdaGetVolume() {}
-void SFileDdaSetVolume() {}
-void SFileGetFileArchive() {}
-void SFileDestroy() {}
-void SFileEnableDirectAccess() {}
-void SFileEnableSeekOptimization() {}
-void SFileFileExists() {}
-void SFileFileExistsEx() {}
-void SFileGetArchiveInfo() {}
-void SFileGetArchiveName() {}
-void SFileGetBasePath() {}
-void SFileLoadFile() {}
-void SFileLoadFileEx() {}
-void SFileOpenFile() {}
-void SFilePrioritizeRequest() {}
-void SFileReadFileEx() {}
-void SFileReadFileEx2() {}
-void SFileSetAsyncBudget() {}
-void SFileSetBasePath() {}
-void SFileSetDataChunkSize() {}
-void SFileSetIoErrorMode() {}
-void SFileSetPlatform() {}
-void SFileUnloadFile() {}
-void SGdi392() {}
-void SGdiBitBlt() {}
-void SGdiCreateFont() {}
-void SGdiDeleteObject() {}
-void SGdiExtTextOut() {}
-void SGdiImportFont() {}
-void SGdiLoadFont() {}
-void SGdiRectangle() {}
-void SGdiSelectObject() {}
-void SGdiSetPitch() {}
-void SGdiTextOut() {}
-void SHashString() {}
-void SLog543() {}
-void SLog549() {}
-void SLogClose() {}
-void SLogCreate() {}
-void SLogCriticalLog() {}
-void SLogDump() {}
-void SLogFlush() {}
-void SLogFlushAll() {}
-void SLogPend() {}
-void SLogWrite() {}
-void SMem496() {}
-void SMemDumpState() {}
-void SMemFindNextBlock() {}
-void SMemFindNextHeap() {}
-void SMemGetHeapByCaller() {}
-void SMemGetHeapByPtr() {}
-void SMemGetSize() {}
-void SMemHeapAlloc() {}
-void SMemHeapCreate() {}
-void SMemHeapDestroy() {}
-void SMemHeapFree() {}
-void SMemHeapRealloc() {}
-void SMemHeapSize() {}
-void SMsgBreakHandlerChain() {}
-void SMsgDispatchMessage() {}
-void SMsgDoMessageLoop() {}
-void SMsgGetDefaultWindow() {}
-void SMsgGetDispatcher() {}
-void SMsgPopRegisterState() {}
-void SMsgPushRegisterState() {}
-void SMsgRegisterCommand() {}
-void SMsgRegisterKeyDown() {}
-void SMsgRegisterKeyUp() {}
-void SMsgRegisterMessage() {}
-void SMsgSetDefaultWindow() {}
-void SMsgUnregisterCommand() {}
-void SMsgUnregisterKeyDown() {}
-void SMsgUnregisterKeyUp() {}
-void SMsgUnregisterMessage() {}
-void SNetCheckDataFile() {}
-void SNetCreateGame() {}
-void SNetCreateLadderGame() {}
-void SNetDestroy() {}
-void SNetDropPlayer() {}
-void SNetEnumDevices() {}
-void SNetEnumGames() {}
-void SNetEnumGamesEx() {}
-void SNetEnumProviders() {}
-void SNetGetGameInfo() {}
-void SNetGetNetworkLatency() {}
-void SNetGetNumPlayers() {}
-void SNetGetOwnerTurnsWaiting() {}
-void SNetGetPerformanceData() {}
-void SNetGetPlayerName() {}
-void SNetGetPlayerNames() {}
-void SNetGetPlayerCaps() {}
-void SNetGetProviderCaps() {}
-void SNetGetTurnsInTransit() {}
-void SNetInitializeDevice() {}
-void SNetInitializeProvider() {}
-void SNetJoinGame() {}
-void SNetLeaveGame() {}
-void SNetPerformUpgrade() {}
-void SNetReceive136() {}
-void SNetReceiveMessage() {}
-void SNetReceiveTurns() {}
-void SNetRegisterEventHandler() {}
-void SNetReportGameResult() {}
-void SNetResetLatencyMeasurements() {}
-void SNetSelectGame() {}
-void SNetSelectProvider() {}
-void SNetSend135() {}
-void SNetSendMessage() {}
-void SNetSendServerChatCommand() {}
-void SNetSendTurn() {}
-void SNetSetBasePlayer() {}
-void SNetSetGameMode() {}
-void SNetUnregisterEventHandler() {}
-void SRegDeleteValue() {}
-void SRegGetBaseKey() {}
-void SRegLoadData() {}
-void SRegLoadString() {}
-void SRegLoadValue() {}
-void SRegSaveData() {}
-void SRegSaveString() {}
-void SRegSaveValue() {}
-void SRgn521() {}
-void SRgn523() {}
-void SRgn527() {}
-void SRgn528i() {}
-void SRgn529i() {}
-void SRgn530i() {}
-void SRgn531i() {}
-void SRgn532i() {}
-void SRgn533i() {}
-void SRgn534() {}
-void SRgn535f() {}
-void SRgn536f() {}
-void SRgn537f() {}
-void SRgn538f() {}
-void SRgn539f() {}
-void SRgn540f() {}
-void SRgnCreateRegion() {}
-void SRgnDeleteRegion() {}
+void Ordinal393() { printf("Stubbed function %s called\n", "Ordinal393"); }
+void SBigFindPrime() { printf("Stubbed function %s called\n", "SBigFindPrime"); }
+void SBigFromStream() { printf("Stubbed function %s called\n", "SBigFromStream"); }
+void SBigGcd() { printf("Stubbed function %s called\n", "SBigGcd"); }
+void SBigInvMod() { printf("Stubbed function %s called\n", "SBigInvMod"); }
+void SBigIsPrime() { printf("Stubbed function %s called\n", "SBigIsPrime"); }
+void SBigMulMod() { printf("Stubbed function %s called\n", "SBigMulMod"); }
+void SBigPow() { printf("Stubbed function %s called\n", "SBigPow"); }
+void SBigRand() { printf("Stubbed function %s called\n", "SBigRand"); }
+void SBigSet2Exp() { printf("Stubbed function %s called\n", "SBigSet2Exp"); }
+void SBigSetOne() { printf("Stubbed function %s called\n", "SBigSetOne"); }
+void SBigSetZero() { printf("Stubbed function %s called\n", "SBigSetZero"); }
+void SBigToBinaryArray() { printf("Stubbed function %s called\n", "SBigToBinaryArray"); }
+void SBigToBinaryPtr() { printf("Stubbed function %s called\n", "SBigToBinaryPtr"); }
+void SBigToStrArray() { printf("Stubbed function %s called\n", "SBigToStrArray"); }
+void SBigToStrBuffer() { printf("Stubbed function %s called\n", "SBigToStrBuffer"); }
+void SBigToStrPtr() { printf("Stubbed function %s called\n", "SBigToStrPtr"); }
+void SBigToStreamArray() { printf("Stubbed function %s called\n", "SBigToStreamArray"); }
+void SBigToStreamBuffer() { printf("Stubbed function %s called\n", "SBigToStreamBuffer"); }
+void SBigToStreamPtr() { printf("Stubbed function %s called\n", "SBigToStreamPtr"); }
+void SBltGetSCode() { printf("Stubbed function %s called\n", "SBltGetSCode"); }
+void SBltROP3() { printf("Stubbed function %s called\n", "SBltROP3"); }
+void SBltROP3Clipped() { printf("Stubbed function %s called\n", "SBltROP3Clipped"); }
+void SBltROP3Tiled() { printf("Stubbed function %s called\n", "SBltROP3Tiled"); }
+void SBmpAllocLoadImage() { printf("Stubbed function %s called\n", "SBmpAllocLoadImage"); }
+void SBmpDecodeImage() { printf("Stubbed function %s called\n", "SBmpDecodeImage"); }
+void SBmpLoadImage() { printf("Stubbed function %s called\n", "SBmpLoadImage"); }
+void SBmpSaveImage() { printf("Stubbed function %s called\n", "SBmpSaveImage"); }
+void SBmpSaveImageEx() { printf("Stubbed function %s called\n", "SBmpSaveImageEx"); }
+void SCmdGetBool() { printf("Stubbed function %s called\n", "SCmdGetBool"); }
+void SCmdGetNum() { printf("Stubbed function %s called\n", "SCmdGetNum"); }
+void SCmdGetString() { printf("Stubbed function %s called\n", "SCmdGetString"); }
+void SCmdProcess() { printf("Stubbed function %s called\n", "SCmdProcess"); }
+void SCmdProcessCommandLine() { printf("Stubbed function %s called\n", "SCmdProcessCommandLine"); }
+void SCmdRegisterArgList() { printf("Stubbed function %s called\n", "SCmdRegisterArgList"); }
+void SCmdRegisterArgument() { printf("Stubbed function %s called\n", "SCmdRegisterArgument"); }
+void SCmdStringExists() { printf("Stubbed function %s called\n", "SCmdStringExists"); }
+void SCodeCompile() { printf("Stubbed function %s called\n", "SCodeCompile"); }
+void SCodeDelete() { printf("Stubbed function %s called\n", "SCodeDelete"); }
+void SCodeExecute() { printf("Stubbed function %s called\n", "SCodeExecute"); }
+void SCodeGetPseudocode() { printf("Stubbed function %s called\n", "SCodeGetPseudocode"); }
+void SDlgBeginPaint() { printf("Stubbed function %s called\n", "SDlgBeginPaint"); }
+void SDlgBltToWindowE() { printf("Stubbed function %s called\n", "SDlgBltToWindowE"); }
+void SDlgBltToWindowI() { printf("Stubbed function %s called\n", "SDlgBltToWindowI"); }
+void SDlgCheckTimers() { printf("Stubbed function %s called\n", "SDlgCheckTimers"); }
+void SDlgCreateDialogIndirectParam() { printf("Stubbed function %s called\n", "SDlgCreateDialogIndirectParam"); }
+void SDlgCreateDialogParam() { printf("Stubbed function %s called\n", "SDlgCreateDialogParam"); }
+void SDlgDefDialogProc() { printf("Stubbed function %s called\n", "SDlgDefDialogProc"); }
+void SDlgDialogBoxIndirectParam() { printf("Stubbed function %s called\n", "SDlgDialogBoxIndirectParam"); }
+void SDlgDialogBoxParam() { printf("Stubbed function %s called\n", "SDlgDialogBoxParam"); }
+void SDlgDrawBitmap() { printf("Stubbed function %s called\n", "SDlgDrawBitmap"); }
+void SDlgEndDialog() { printf("Stubbed function %s called\n", "SDlgEndDialog"); }
+void SDlgEndPaint() { printf("Stubbed function %s called\n", "SDlgEndPaint"); }
+void SDlgSetBaseFont() { printf("Stubbed function %s called\n", "SDlgSetBaseFont"); }
+void SDlgSetBitmapE() { printf("Stubbed function %s called\n", "SDlgSetBitmapE"); }
+void SDlgSetBitmapI() { printf("Stubbed function %s called\n", "SDlgSetBitmapI"); }
+void SDlgSetControlBitmaps() { printf("Stubbed function %s called\n", "SDlgSetControlBitmaps"); }
+void SDlgSetCursor() { printf("Stubbed function %s called\n", "SDlgSetCursor"); }
+void SDlgSetSystemCursor() { printf("Stubbed function %s called\n", "SDlgSetSystemCursor"); }
+void SDlgUpdateCursor() { printf("Stubbed function %s called\n", "SDlgUpdateCursor"); }
+void SDlgSetLocale() { printf("Stubbed function %s called\n", "SDlgSetLocale"); }
+void SDlgSetTimer() { printf("Stubbed function %s called\n", "SDlgSetTimer"); }
+void SDlgKillTimer() { printf("Stubbed function %s called\n", "SDlgKillTimer"); }
+void SDrawAutoInitialize() { printf("Stubbed function %s called\n", "SDrawAutoInitialize"); }
+void SDrawCaptureScreen() { printf("Stubbed function %s called\n", "SDrawCaptureScreen"); }
+void SDrawClearSurface() { printf("Stubbed function %s called\n", "SDrawClearSurface"); }
+void SDrawDestroy() { printf("Stubbed function %s called\n", "SDrawDestroy"); }
+void SDrawFlipPage() { printf("Stubbed function %s called\n", "SDrawFlipPage"); }
+void SDrawGetFrameWindow() { printf("Stubbed function %s called\n", "SDrawGetFrameWindow"); }
+void SDrawGetObjects() { printf("Stubbed function %s called\n", "SDrawGetObjects"); }
+void SDrawGetScreenSize() { printf("Stubbed function %s called\n", "SDrawGetScreenSize"); }
+void SDrawGetServiceLevel() { printf("Stubbed function %s called\n", "SDrawGetServiceLevel"); }
+void SDrawLockSurface() { printf("Stubbed function %s called\n", "SDrawLockSurface"); }
+void SDrawManualInitialize() { printf("Stubbed function %s called\n", "SDrawManualInitialize"); }
+void SDrawMessageBox() { printf("Stubbed function %s called\n", "SDrawMessageBox"); }
+void SDrawPostClose() { printf("Stubbed function %s called\n", "SDrawPostClose"); }
+void SDrawRealizePalette() { printf("Stubbed function %s called\n", "SDrawRealizePalette"); }
+void SDrawSelectGdiSurface() { printf("Stubbed function %s called\n", "SDrawSelectGdiSurface"); }
+void SDrawUnlockSurface() { printf("Stubbed function %s called\n", "SDrawUnlockSurface"); }
+void SDrawUpdatePalette() { printf("Stubbed function %s called\n", "SDrawUpdatePalette"); }
+void SDrawUpdateScreen() { printf("Stubbed function %s called\n", "SDrawUpdateScreen"); }
+void SDrawWaitForVerticalBlank() { printf("Stubbed function %s called\n", "SDrawWaitForVerticalBlank"); }
+void SErrRegisterHandler() { printf("Stubbed function %s called\n", "SErrRegisterHandler"); }
+void SErrRegisterMessageSource() { printf("Stubbed function %s called\n", "SErrRegisterMessageSource"); }
+void SErrReportResourceLeak() { printf("Stubbed function %s called\n", "SErrReportResourceLeak"); }
+void SErrUnregisterHandler() { printf("Stubbed function %s called\n", "SErrUnregisterHandler"); }
+void SErrAuthenticateArchive() { printf("Stubbed function %s called\n", "SErrAuthenticateArchive"); }
+void SErrReportNamedResourceLeak() { printf("Stubbed function %s called\n", "SErrReportNamedResourceLeak"); }
+void SFileAuthenticateArchive() { printf("Stubbed function %s called\n", "SFileAuthenticateArchive"); }
+void SFileCancelRequest() { printf("Stubbed function %s called\n", "SFileCancelRequest"); }
+void SFileDdaInitialize() { printf("Stubbed function %s called\n", "SFileDdaInitialize"); }
+void SFileDdaBegin() { printf("Stubbed function %s called\n", "SFileDdaBegin"); }
+void SFileDdaBeginEx() { printf("Stubbed function %s called\n", "SFileDdaBeginEx"); }
+void SFileDdaDestroy() { printf("Stubbed function %s called\n", "SFileDdaDestroy"); }
+void SFileDdaEnd() { printf("Stubbed function %s called\n", "SFileDdaEnd"); }
+void SFileDdaGetPos() { printf("Stubbed function %s called\n", "SFileDdaGetPos"); }
+void SFileDdaGetVolume() { printf("Stubbed function %s called\n", "SFileDdaGetVolume"); }
+void SFileDdaSetVolume() { printf("Stubbed function %s called\n", "SFileDdaSetVolume"); }
+void SFileGetFileArchive() { printf("Stubbed function %s called\n", "SFileGetFileArchive"); }
+void SFileDestroy() { printf("Stubbed function %s called\n", "SFileDestroy"); }
+void SFileEnableDirectAccess() { printf("Stubbed function %s called\n", "SFileEnableDirectAccess"); }
+void SFileEnableSeekOptimization() { printf("Stubbed function %s called\n", "SFileEnableSeekOptimization"); }
+void SFileFileExists() { printf("Stubbed function %s called\n", "SFileFileExists"); }
+void SFileFileExistsEx() { printf("Stubbed function %s called\n", "SFileFileExistsEx"); }
+void SFileGetArchiveInfo() { printf("Stubbed function %s called\n", "SFileGetArchiveInfo"); }
+void SFileGetArchiveName() { printf("Stubbed function %s called\n", "SFileGetArchiveName"); }
+void SFileGetBasePath() { printf("Stubbed function %s called\n", "SFileGetBasePath"); }
+void SFileLoadFile() { printf("Stubbed function %s called\n", "SFileLoadFile"); }
+void SFileLoadFileEx() { printf("Stubbed function %s called\n", "SFileLoadFileEx"); }
+void SFileOpenFile() { printf("Stubbed function %s called\n", "SFileOpenFile"); }
+void SFilePrioritizeRequest() { printf("Stubbed function %s called\n", "SFilePrioritizeRequest"); }
+void SFileReadFileEx() { printf("Stubbed function %s called\n", "SFileReadFileEx"); }
+void SFileReadFileEx2() { printf("Stubbed function %s called\n", "SFileReadFileEx2"); }
+void SFileSetAsyncBudget() { printf("Stubbed function %s called\n", "SFileSetAsyncBudget"); }
+void SFileSetBasePath() { printf("Stubbed function %s called\n", "SFileSetBasePath"); }
+void SFileSetDataChunkSize() { printf("Stubbed function %s called\n", "SFileSetDataChunkSize"); }
+void SFileSetIoErrorMode() { printf("Stubbed function %s called\n", "SFileSetIoErrorMode"); }
+void SFileSetPlatform() { printf("Stubbed function %s called\n", "SFileSetPlatform"); }
+void SFileUnloadFile() { printf("Stubbed function %s called\n", "SFileUnloadFile"); }
+void SGdi392() { printf("Stubbed function %s called\n", "SGdi392"); }
+void SGdiBitBlt() { printf("Stubbed function %s called\n", "SGdiBitBlt"); }
+void SGdiCreateFont() { printf("Stubbed function %s called\n", "SGdiCreateFont"); }
+void SGdiDeleteObject() { printf("Stubbed function %s called\n", "SGdiDeleteObject"); }
+void SGdiExtTextOut() { printf("Stubbed function %s called\n", "SGdiExtTextOut"); }
+void SGdiImportFont() { printf("Stubbed function %s called\n", "SGdiImportFont"); }
+void SGdiLoadFont() { printf("Stubbed function %s called\n", "SGdiLoadFont"); }
+void SGdiRectangle() { printf("Stubbed function %s called\n", "SGdiRectangle"); }
+void SGdiSelectObject() { printf("Stubbed function %s called\n", "SGdiSelectObject"); }
+void SGdiSetPitch() { printf("Stubbed function %s called\n", "SGdiSetPitch"); }
+void SGdiTextOut() { printf("Stubbed function %s called\n", "SGdiTextOut"); }
+void SHashString() { printf("Stubbed function %s called\n", "SHashString"); }
+void SLog543() { printf("Stubbed function %s called\n", "SLog543"); }
+void SLog549() { printf("Stubbed function %s called\n", "SLog549"); }
+void SLogClose() { printf("Stubbed function %s called\n", "SLogClose"); }
+void SLogCreate() { printf("Stubbed function %s called\n", "SLogCreate"); }
+void SLogCriticalLog() { printf("Stubbed function %s called\n", "SLogCriticalLog"); }
+void SLogDump() { printf("Stubbed function %s called\n", "SLogDump"); }
+void SLogFlush() { printf("Stubbed function %s called\n", "SLogFlush"); }
+void SLogFlushAll() { printf("Stubbed function %s called\n", "SLogFlushAll"); }
+void SLogPend() { printf("Stubbed function %s called\n", "SLogPend"); }
+void SLogWrite() { printf("Stubbed function %s called\n", "SLogWrite"); }
+void SMem496() { printf("Stubbed function %s called\n", "SMem496"); }
+void SMemDumpState() { printf("Stubbed function %s called\n", "SMemDumpState"); }
+void SMemFindNextBlock() { printf("Stubbed function %s called\n", "SMemFindNextBlock"); }
+void SMemFindNextHeap() { printf("Stubbed function %s called\n", "SMemFindNextHeap"); }
+void SMemGetHeapByCaller() { printf("Stubbed function %s called\n", "SMemGetHeapByCaller"); }
+void SMemGetHeapByPtr() { printf("Stubbed function %s called\n", "SMemGetHeapByPtr"); }
+void SMemGetSize() { printf("Stubbed function %s called\n", "SMemGetSize"); }
+void SMemHeapAlloc() { printf("Stubbed function %s called\n", "SMemHeapAlloc"); }
+void SMemHeapCreate() { printf("Stubbed function %s called\n", "SMemHeapCreate"); }
+void SMemHeapDestroy() { printf("Stubbed function %s called\n", "SMemHeapDestroy"); }
+void SMemHeapFree() { printf("Stubbed function %s called\n", "SMemHeapFree"); }
+void SMemHeapRealloc() { printf("Stubbed function %s called\n", "SMemHeapRealloc"); }
+void SMemHeapSize() { printf("Stubbed function %s called\n", "SMemHeapSize"); }
+void SMsgBreakHandlerChain() { printf("Stubbed function %s called\n", "SMsgBreakHandlerChain"); }
+void SMsgDispatchMessage() { printf("Stubbed function %s called\n", "SMsgDispatchMessage"); }
+void SMsgDoMessageLoop() { printf("Stubbed function %s called\n", "SMsgDoMessageLoop"); }
+void SMsgGetDefaultWindow() { printf("Stubbed function %s called\n", "SMsgGetDefaultWindow"); }
+void SMsgGetDispatcher() { printf("Stubbed function %s called\n", "SMsgGetDispatcher"); }
+void SMsgPopRegisterState() { printf("Stubbed function %s called\n", "SMsgPopRegisterState"); }
+void SMsgPushRegisterState() { printf("Stubbed function %s called\n", "SMsgPushRegisterState"); }
+void SMsgRegisterCommand() { printf("Stubbed function %s called\n", "SMsgRegisterCommand"); }
+void SMsgRegisterKeyDown() { printf("Stubbed function %s called\n", "SMsgRegisterKeyDown"); }
+void SMsgRegisterKeyUp() { printf("Stubbed function %s called\n", "SMsgRegisterKeyUp"); }
+void SMsgRegisterMessage() { printf("Stubbed function %s called\n", "SMsgRegisterMessage"); }
+void SMsgSetDefaultWindow() { printf("Stubbed function %s called\n", "SMsgSetDefaultWindow"); }
+void SMsgUnregisterCommand() { printf("Stubbed function %s called\n", "SMsgUnregisterCommand"); }
+void SMsgUnregisterKeyDown() { printf("Stubbed function %s called\n", "SMsgUnregisterKeyDown"); }
+void SMsgUnregisterKeyUp() { printf("Stubbed function %s called\n", "SMsgUnregisterKeyUp"); }
+void SMsgUnregisterMessage() { printf("Stubbed function %s called\n", "SMsgUnregisterMessage"); }
+void SNetCheckDataFile() { printf("Stubbed function %s called\n", "SNetCheckDataFile"); }
+void SNetCreateGame() { printf("Stubbed function %s called\n", "SNetCreateGame"); }
+void SNetCreateLadderGame() { printf("Stubbed function %s called\n", "SNetCreateLadderGame"); }
+void SNetDestroy() { printf("Stubbed function %s called\n", "SNetDestroy"); }
+void SNetDropPlayer() { printf("Stubbed function %s called\n", "SNetDropPlayer"); }
+void SNetEnumDevices() { printf("Stubbed function %s called\n", "SNetEnumDevices"); }
+void SNetEnumGames() { printf("Stubbed function %s called\n", "SNetEnumGames"); }
+void SNetEnumGamesEx() { printf("Stubbed function %s called\n", "SNetEnumGamesEx"); }
+void SNetEnumProviders() { printf("Stubbed function %s called\n", "SNetEnumProviders"); }
+void SNetGetGameInfo() { printf("Stubbed function %s called\n", "SNetGetGameInfo"); }
+void SNetGetNetworkLatency() { printf("Stubbed function %s called\n", "SNetGetNetworkLatency"); }
+void SNetGetNumPlayers() { printf("Stubbed function %s called\n", "SNetGetNumPlayers"); }
+void SNetGetOwnerTurnsWaiting() { printf("Stubbed function %s called\n", "SNetGetOwnerTurnsWaiting"); }
+void SNetGetPerformanceData() { printf("Stubbed function %s called\n", "SNetGetPerformanceData"); }
+void SNetGetPlayerName() { printf("Stubbed function %s called\n", "SNetGetPlayerName"); }
+void SNetGetPlayerNames() { printf("Stubbed function %s called\n", "SNetGetPlayerNames"); }
+void SNetGetPlayerCaps() { printf("Stubbed function %s called\n", "SNetGetPlayerCaps"); }
+void SNetGetProviderCaps() { printf("Stubbed function %s called\n", "SNetGetProviderCaps"); }
+void SNetGetTurnsInTransit() { printf("Stubbed function %s called\n", "SNetGetTurnsInTransit"); }
+void SNetInitializeDevice() { printf("Stubbed function %s called\n", "SNetInitializeDevice"); }
+void SNetInitializeProvider() { printf("Stubbed function %s called\n", "SNetInitializeProvider"); }
+void SNetJoinGame() { printf("Stubbed function %s called\n", "SNetJoinGame"); }
+void SNetLeaveGame() { printf("Stubbed function %s called\n", "SNetLeaveGame"); }
+void SNetPerformUpgrade() { printf("Stubbed function %s called\n", "SNetPerformUpgrade"); }
+void SNetReceive136() { printf("Stubbed function %s called\n", "SNetReceive136"); }
+void SNetReceiveMessage() { printf("Stubbed function %s called\n", "SNetReceiveMessage"); }
+void SNetReceiveTurns() { printf("Stubbed function %s called\n", "SNetReceiveTurns"); }
+void SNetRegisterEventHandler() { printf("Stubbed function %s called\n", "SNetRegisterEventHandler"); }
+void SNetReportGameResult() { printf("Stubbed function %s called\n", "SNetReportGameResult"); }
+void SNetResetLatencyMeasurements() { printf("Stubbed function %s called\n", "SNetResetLatencyMeasurements"); }
+void SNetSelectGame() { printf("Stubbed function %s called\n", "SNetSelectGame"); }
+void SNetSelectProvider() { printf("Stubbed function %s called\n", "SNetSelectProvider"); }
+void SNetSend135() { printf("Stubbed function %s called\n", "SNetSend135"); }
+void SNetSendMessage() { printf("Stubbed function %s called\n", "SNetSendMessage"); }
+void SNetSendServerChatCommand() { printf("Stubbed function %s called\n", "SNetSendServerChatCommand"); }
+void SNetSendTurn() { printf("Stubbed function %s called\n", "SNetSendTurn"); }
+void SNetSetBasePlayer() { printf("Stubbed function %s called\n", "SNetSetBasePlayer"); }
+void SNetSetGameMode() { printf("Stubbed function %s called\n", "SNetSetGameMode"); }
+void SNetUnregisterEventHandler() { printf("Stubbed function %s called\n", "SNetUnregisterEventHandler"); }
+void SRegDeleteValue() { printf("Stubbed function %s called\n", "SRegDeleteValue"); }
+void SRegGetBaseKey() { printf("Stubbed function %s called\n", "SRegGetBaseKey"); }
+void SRegLoadData() { printf("Stubbed function %s called\n", "SRegLoadData"); }
+void SRegLoadString() { printf("Stubbed function %s called\n", "SRegLoadString"); }
+void SRegLoadValue() { printf("Stubbed function %s called\n", "SRegLoadValue"); }
+void SRegSaveData() { printf("Stubbed function %s called\n", "SRegSaveData"); }
+void SRegSaveString() { printf("Stubbed function %s called\n", "SRegSaveString"); }
+void SRegSaveValue() { printf("Stubbed function %s called\n", "SRegSaveValue"); }
+void SRgn521() { printf("Stubbed function %s called\n", "SRgn521"); }
+void SRgn523() { printf("Stubbed function %s called\n", "SRgn523"); }
+void SRgn527() { printf("Stubbed function %s called\n", "SRgn527"); }
+void SRgn528i() { printf("Stubbed function %s called\n", "SRgn528i"); }
+void SRgn529i() { printf("Stubbed function %s called\n", "SRgn529i"); }
+void SRgn530i() { printf("Stubbed function %s called\n", "SRgn530i"); }
+void SRgn531i() { printf("Stubbed function %s called\n", "SRgn531i"); }
+void SRgn532i() { printf("Stubbed function %s called\n", "SRgn532i"); }
+void SRgn533i() { printf("Stubbed function %s called\n", "SRgn533i"); }
+void SRgn534() { printf("Stubbed function %s called\n", "SRgn534"); }
+void SRgn535f() { printf("Stubbed function %s called\n", "SRgn535f"); }
+void SRgn536f() { printf("Stubbed function %s called\n", "SRgn536f"); }
+void SRgn537f() { printf("Stubbed function %s called\n", "SRgn537f"); }
+void SRgn538f() { printf("Stubbed function %s called\n", "SRgn538f"); }
+void SRgn539f() { printf("Stubbed function %s called\n", "SRgn539f"); }
+void SRgn540f() { printf("Stubbed function %s called\n", "SRgn540f"); }
+void SRgnCreateRegion() { printf("Stubbed function %s called\n", "SRgnCreateRegion"); }
+void SRgnDeleteRegion() { printf("Stubbed function %s called\n", "SRgnDeleteRegion"); }
 // void SStrChr() {}
 // void SStrChrR() {}
-void SStrDup() {}
-void SStrNCat() {}
-void SStrSearch() {}
-void SStrToInt64() {}
-void STrans446() {}
-void STransCreateI2() {}
-void STransLoadE() {}
-void STransLoadI() {}
-void STransPointInMask() {}
-void SUniConvert912() {}
-void SUniConvert913() {}
-void SUniConvert914() {}
-void SUniConvertUTF16To909() {}
-void SUniConvertUTF16To910() {}
-void SUniConvertUTF16To911() {}
-void SUniConvertUTF16to8() {}
-void SUniConvertUTF16to8Len() {}
-void SUniConvertUTF8to16() {}
-void SUniConvertUTF8to16Len() {}
-void SUni905() {}
-void SUni906() {}
-void SUniS905() {}
-void SUniS906() {}
-void SVidDestroy() {}
-void SVidGetSize() {}
-void SVidInitialize() {}
-void SVidPlayBegin() {}
-void SVidPlayBeginFromMemory() {}
-void SVidPlayContinue() {}
-void SVidPlayEnd() {}
-void SVidPlayContinueSingle() {}
-void SVidSetVolume() {}
-void StormGetInstance() {}
-void StormGetOption() {}
-void StormSetOption() {}
+void SStrDup() { printf("Stubbed function %s called\n", "SStrDup"); }
+void SStrNCat() { printf("Stubbed function %s called\n", "SStrNCat"); }
+void SStrSearch() { printf("Stubbed function %s called\n", "SStrSearch"); }
+void SStrToInt64() { printf("Stubbed function %s called\n", "SStrToInt64"); }
+void STrans446() { printf("Stubbed function %s called\n", "STrans446"); }
+void STransCreateI2() { printf("Stubbed function %s called\n", "STransCreateI2"); }
+void STransLoadE() { printf("Stubbed function %s called\n", "STransLoadE"); }
+void STransLoadI() { printf("Stubbed function %s called\n", "STransLoadI"); }
+void STransPointInMask() { printf("Stubbed function %s called\n", "STransPointInMask"); }
+void SUniConvert912() { printf("Stubbed function %s called\n", "SUniConvert912"); }
+void SUniConvert913() { printf("Stubbed function %s called\n", "SUniConvert913"); }
+void SUniConvert914() { printf("Stubbed function %s called\n", "SUniConvert914"); }
+void SUniConvertUTF16To909() { printf("Stubbed function %s called\n", "SUniConvertUTF16To909"); }
+void SUniConvertUTF16To910() { printf("Stubbed function %s called\n", "SUniConvertUTF16To910"); }
+void SUniConvertUTF16To911() { printf("Stubbed function %s called\n", "SUniConvertUTF16To911"); }
+void SUniConvertUTF16to8() { printf("Stubbed function %s called\n", "SUniConvertUTF16to8"); }
+void SUniConvertUTF16to8Len() { printf("Stubbed function %s called\n", "SUniConvertUTF16to8Len"); }
+void SUniConvertUTF8to16() { printf("Stubbed function %s called\n", "SUniConvertUTF8to16"); }
+void SUniConvertUTF8to16Len() { printf("Stubbed function %s called\n", "SUniConvertUTF8to16Len"); }
+void SUni905() { printf("Stubbed function %s called\n", "SUni905"); }
+void SUni906() { printf("Stubbed function %s called\n", "SUni906"); }
+void SUniS905() { printf("Stubbed function %s called\n", "SUniS905"); }
+void SUniS906() { printf("Stubbed function %s called\n", "SUniS906"); }
+void SVidDestroy() { printf("Stubbed function %s called\n", "SVidDestroy"); }
+void SVidGetSize() { printf("Stubbed function %s called\n", "SVidGetSize"); }
+void SVidInitialize() { printf("Stubbed function %s called\n", "SVidInitialize"); }
+void SVidPlayBegin() { printf("Stubbed function %s called\n", "SVidPlayBegin"); }
+void SVidPlayBeginFromMemory() { printf("Stubbed function %s called\n", "SVidPlayBeginFromMemory"); }
+void SVidPlayContinue() { printf("Stubbed function %s called\n", "SVidPlayContinue"); }
+void SVidPlayEnd() { printf("Stubbed function %s called\n", "SVidPlayEnd"); }
+void SVidPlayContinueSingle() { printf("Stubbed function %s called\n", "SVidPlayContinueSingle"); }
+void SVidSetVolume() { printf("Stubbed function %s called\n", "SVidSetVolume"); }
+void StormGetInstance() { printf("Stubbed function %s called\n", "StormGetInstance"); }
+void StormGetOption() { printf("Stubbed function %s called\n", "StormGetOption"); }
+void StormSetOption() { printf("Stubbed function %s called\n", "StormSetOption"); }
