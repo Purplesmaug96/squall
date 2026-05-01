@@ -8,6 +8,7 @@
 #if defined(WHOA_SYSTEM_WIN)
 #include <WinError.h>
 #endif
+#include <wtypes.h>
 
 #if defined(WHOA_SYSTEM_MAC) || defined(WHOA_SYSTEM_LINUX)
 #define ERROR_SUCCESS           0
@@ -38,5 +39,7 @@ void STORMAPI SErrSetLastError(uint32_t errorcode);
 uint32_t STORMAPI SErrGetLastError();
 
 void STORMAPI SErrSuppressErrors(int32_t suppress);
+
+int STORMAPI SErrGetErrorStr(DWORD dwMessageId, char* lpBuffer, DWORD nSize);
 
 #endif

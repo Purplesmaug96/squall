@@ -82,7 +82,6 @@ void SDrawUnlockSurface();
 void SDrawUpdatePalette();
 void SDrawUpdateScreen();
 void SDrawWaitForVerticalBlank();
-void SErrGetErrorStr();
 void SErrRegisterHandler();
 void SErrRegisterMessageSource();
 void SErrReportResourceLeak();
