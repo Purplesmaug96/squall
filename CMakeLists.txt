@@ -18,6 +18,12 @@ project(storm)
 
 set(CMAKE_CXX_STANDARD 11)
 
+option(WHOA_DYNAMIC_LIB "Build the project to a dynamic library (.so/.dll)" OFF)
+
+if (WHOA_DYNAMIC_LIB)
+	set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+endif()
+
 set(WHOA_SFILE_MODE "NATIVE" CACHE STRING "SFile backend (NATIVE or STORMLIB)")
 set_property(CACHE WHOA_SFILE_MODE PROPERTY STRINGS NATIVE STORMLIB)
 

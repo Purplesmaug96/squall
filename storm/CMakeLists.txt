@@ -47,9 +47,15 @@ else()
     list(APPEND STORM_SOURCES "file/SFileNative.cpp")
 endif()
 
-add_library(storm STATIC
-    ${STORM_SOURCES}
-)
+if (WHOA_DYNAMIC_LIB)
+	add_library(storm SHARED
+		${STORM_SOURCES}
+	)
+else()
+	add_library(storm STATIC
+		${STORM_SOURCES}
+	)
+endif()
 
 target_compile_definitions(storm PRIVATE _CRT_SECURE_NO_WARNINGS)
 target_compile_definitions(storm PUBLIC WHOA_SFILE_MODE_${WHOA_SFILE_MODE})
