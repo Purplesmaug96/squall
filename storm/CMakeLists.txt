@@ -13,11 +13,20 @@ file(GLOB STORM_SOURCES
 )
 
 if(WHOA_SYSTEM_WIN)
-    file(GLOB STORM_WIN_SOURCES
-        "win/*.cpp"
-        "error/win/*.cpp"
-        "thread/win/*.cpp"
-    )
+	if(WHOA_STORM_FLAVOR STREQUAL "DIABLO2")
+		file(GLOB STORM_WIN_SOURCES
+			"win/*.cpp"
+			"win/Diablo2.1.10f.def"
+			"error/win/*.cpp"
+			"thread/win/*.cpp"
+		)
+	else()
+		file(GLOB STORM_WIN_SOURCES
+			"win/*.cpp"
+			"error/win/*.cpp"
+			"thread/win/*.cpp"
+		)
+	endif()
     list(APPEND STORM_SOURCES ${STORM_WIN_SOURCES})
 endif()
 
