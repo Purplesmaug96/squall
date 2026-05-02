@@ -210,14 +210,6 @@ void SNetSendTurn() { printf("Stubbed function %s called\n", "SNetSendTurn"); }
 void SNetSetBasePlayer() { printf("Stubbed function %s called\n", "SNetSetBasePlayer"); }
 void SNetSetGameMode() { printf("Stubbed function %s called\n", "SNetSetGameMode"); }
 void SNetUnregisterEventHandler() { printf("Stubbed function %s called\n", "SNetUnregisterEventHandler"); }
-void SRegDeleteValue() { printf("Stubbed function %s called\n", "SRegDeleteValue"); }
-void SRegGetBaseKey() { printf("Stubbed function %s called\n", "SRegGetBaseKey"); }
-void SRegLoadData() { printf("Stubbed function %s called\n", "SRegLoadData"); }
-void SRegLoadString() { printf("Stubbed function %s called\n", "SRegLoadString"); }
-void SRegLoadValue() { printf("Stubbed function %s called\n", "SRegLoadValue"); }
-void SRegSaveData() { printf("Stubbed function %s called\n", "SRegSaveData"); }
-void SRegSaveString() { printf("Stubbed function %s called\n", "SRegSaveString"); }
-void SRegSaveValue() { printf("Stubbed function %s called\n", "SRegSaveValue"); }
 void SRgn521() { printf("Stubbed function %s called\n", "SRgn521"); }
 void SRgn523() { printf("Stubbed function %s called\n", "SRgn523"); }
 void SRgn527() { printf("Stubbed function %s called\n", "SRgn527"); }
