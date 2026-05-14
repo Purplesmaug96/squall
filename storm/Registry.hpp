@@ -3,6 +3,7 @@
 #ifdef WHOA_SYSTEM_WIN
 #include <Windows.h>
 #else
+#ifndef __windows_shim
 #include <stdint.h>
 typedef uint32_t BOOL;
 typedef void* HKEY;
@@ -13,6 +14,9 @@ typedef char* LPSTR;
 typedef long LONG;
 #define TRUE true
 #define FALSE false
+#else
+#include <windows.h>
+#endif
 #endif
 
 #include "Core.hpp"

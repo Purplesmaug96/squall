@@ -14,8 +14,13 @@
 #endif
 
 #if !defined(WHOA_SYSTEM_WIN)
+#ifndef __windows_shim
 typedef void* HANDLE;
 typedef void* LPOVERLAPPED;
+#else
+#include <winnt.h>
+#include <minwinbase.h>
+#endif
 #endif
 
 int32_t STORMAPI StormDestroy();
