@@ -17,9 +17,11 @@
 #ifndef __windows_shim
 typedef void* HANDLE;
 typedef void* LPOVERLAPPED;
+typedef struct HWND__* HWND;
 #else
 #include <winnt.h>
 #include <minwinbase.h>
+#include <winuser.h>
 #endif
 #endif
 
