@@ -14,6 +14,8 @@ enum SREG_Flags {
 };
 */
 
+#ifdef WHOA_SYSTEM_WIN
+
 typedef struct {
     bool flagDefaultHives;
     bool flagExcludeLocalMachineHive;
@@ -307,3 +309,39 @@ BOOL STORMAPI SRegSaveValue(const char* keyname, const char* valuename, uint8_t 
     DWORD one = 1;
     return SRegSaveData(keyname, valuename, nFlags, (char*)&one, sizeof(one));
 }
+
+#else
+
+BOOL STORMAPI SRegDeleteValue(const char* keyname, const char* valuename, HKEY phkResult) {
+	printf("Stubbed function SRegDeleteValue called\n");
+}
+
+BOOL STORMAPI SRegGetBaseKey(char flags, char* buffer, size_t bufferchars) {
+	printf("Stubbed function SRegGetBaseKey called\n");
+}
+
+BOOL STORMAPI SRegLoadData(const char* keyname, const char* valuename, size_t nSize, LPBYTE, uint32_t nFlags, LPDWORD lpcbData) {
+	printf("Stubbed function SRegLoadData called\n");
+}
+
+BOOL STORMAPI SRegLoadString(const char* keyname, const char* valuename, uint32_t nFlags, LPSTR pBuffer, size_t nBufferSize) {
+	printf("Stubbed function SRegLoadString called\n");
+}
+
+BOOL STORMAPI SRegLoadValue(const char* keyname, const char* valuename, uint32_t nFlags, DWORD* value) {
+	printf("Stubbed function SRegLoadValue called\n");
+}
+
+BOOL STORMAPI SRegSaveData(const char* keyname, const char* valuename, uint8_t nFlags, char* lpData, DWORD cbData) {
+	printf("Stubbed function SRegSaveData called\n");
+}
+
+BOOL STORMAPI SRegSaveString(const char* keyname, const char* valuename, uint8_t nFlags, const char* string) {
+	printf("Stubbed function SRegSaveString called\n");
+}
+
+BOOL STORMAPI SRegSaveValue(const char* keyname, const char* valuename, uint8_t nFlags) {
+	printf("Stubbed function SRegSaveValue called\n");
+}
+
+#endif

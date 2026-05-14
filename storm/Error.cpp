@@ -1,4 +1,5 @@
 #include "storm/Error.hpp"
+#include "storm/String.hpp"
 #include <cstdarg>
 #include <cstdio>
 #include <cstdlib>
@@ -109,6 +110,7 @@ void GetExceptionNameWin32(DWORD dwMessageId, char* lpBuffer, DWORD nSize);
 #else
 static void GetExceptionName(DWORD dwMessageId, char* lpBuffer, DWORD nSize) {
     switch (dwMessageId) {
+#ifdef WHOA_SYSTEM_WIN
         case EXCEPTION_GUARD_PAGE:
             SStrCopy(lpBuffer, "GUARD_PAGE", nSize);
             break;
@@ -192,6 +194,7 @@ static void GetExceptionName(DWORD dwMessageId, char* lpBuffer, DWORD nSize) {
         case EXCEPTION_STACK_OVERFLOW:
             SStrCopy(lpBuffer, "STACK_OVERFLOW", nSize);
             break;
+#endif
 
         default:
             SStrCopy(lpBuffer, "unknown exception", nSize);

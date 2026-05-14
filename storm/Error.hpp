@@ -7,8 +7,8 @@
 
 #if defined(WHOA_SYSTEM_WIN)
 #include <WinError.h>
-#endif
 #include <wtypes.h>
+#endif
 
 #if defined(WHOA_SYSTEM_MAC) || defined(WHOA_SYSTEM_LINUX)
 #define ERROR_SUCCESS           0
@@ -17,6 +17,12 @@
 #define ERROR_NOT_ENOUGH_MEMORY 8
 #define ERROR_HANDLE_EOF        38
 #define ERROR_INVALID_PARAMETER 87
+#ifndef __windows_shim
+typedef uint32_t DWORD;
+#else
+#error
+#include <windef.h>
+#endif
 #endif
 
 [[noreturn]] void STORMCDECL SErrDisplayAppFatal(const char* format, ...);

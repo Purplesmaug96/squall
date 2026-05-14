@@ -16,7 +16,9 @@ endif()
 # Project
 project(storm)
 
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 23)
+set(CMAKE_CXX_EXTENSIONS ON)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 option(WHOA_DYNAMIC_LIB "Build the project to a dynamic library (.so/.dll)" OFF)
 

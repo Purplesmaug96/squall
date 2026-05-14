@@ -66,6 +66,22 @@ else()
 	)
 endif()
 
+if(WHOA_SYSTEM_WIN)
+	target_compile_definitions(storm PRIVATE WHOA_SYSTEM_WIN)
+endif()
+
+if(WHOA_SYSTEM_MAC)
+	target_compile_definitions(storm PRIVATE WHOA_SYSTEM_MAC)
+endif()
+
+if(WHOA_SYSTEM_LINUX)
+	target_compile_definitions(storm PRIVATE WHOA_SYSTEM_LINUX)
+endif()
+
+set(CMAKE_CXX_STANDARD 23)
+set(CMAKE_CXX_EXTENSIONS ON)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
 target_compile_definitions(storm PRIVATE _CRT_SECURE_NO_WARNINGS)
 target_compile_definitions(storm PUBLIC WHOA_SFILE_MODE_${WHOA_SFILE_MODE})
 

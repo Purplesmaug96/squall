@@ -1,6 +1,20 @@
 #pragma once
 
+#ifdef WHOA_SYSTEM_WIN
 #include <Windows.h>
+#else
+#include <stdint.h>
+typedef uint32_t BOOL;
+typedef void* HKEY;
+typedef uint8_t* LPBYTE;
+typedef uint32_t DWORD;
+typedef DWORD* LPDWORD;
+typedef char* LPSTR;
+typedef long LONG;
+#define TRUE true
+#define FALSE false
+#endif
+
 #include "Core.hpp"
 
 enum SREG_Flags {
