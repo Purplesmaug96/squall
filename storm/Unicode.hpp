@@ -26,4 +26,6 @@ uint32_t STORMAPI SUniSGetUTF8(const uint8_t* strptr, int32_t* chars);
 
 void STORMAPI SUniSPutUTF8(uint32_t c, char* strptr);
 
+int SUniConvertUTF8to16(wchar_t* pBuffer, int nBufferCount, const char* szSrc, int nSrcCount, int* pOutLength, int a6);
+
 #endif

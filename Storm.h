@@ -17,3 +17,7 @@
 #include "storm/Array.hpp"
 #include "storm/Atomic.hpp"
 #include "storm/Registry.hpp"
+
+#include <string.h>
+
+#define SFileGetFileName(hFile, buffer, length) strncpy(buffer, "Unknown", length)
