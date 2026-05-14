@@ -28,6 +28,8 @@
 #define REGISTERTYPE_KEYDOWN    (REGISTERTYPE_BASE+3)
 #define REGISTERTYPE_KEYUP      (REGISTERTYPE_BASE+4)
 
+#define HWND void*
+
 struct WNDREC : public TSLinkedNode<WNDREC> {
     HWND window;
 };

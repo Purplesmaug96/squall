@@ -7,16 +7,45 @@
 #include <Windows.h>
 #endif
 
-typedef struct _PARAMS {
-    void* window;
-    uint32_t message;
-    uint32_t wparam;
-    int32_t lparam;
-    uint32_t notifycode;
-    void* extra;
-    int32_t useresult;
-    int32_t result;
+#define HWND void*
+
+/*
+struct SMSGHANDLER_PARAMS {
+    HWND    hWindow;
+    UINT    nMessage;
+    WPARAM  wParam;
+    LPARAM  lParam;
+    UINT    nNotifyCode;
+    LPVOID  pExtra;
+    BOOL    bUseResult;
+    LRESULT lResult;
+};
+*/
+
+typedef union _PARAMS {
+	struct {
+		void* window;
+		uint32_t message;
+		uint32_t wparam;
+		int32_t lparam;
+		uint32_t notifycode;
+		void* extra;
+		int32_t useresult;
+		int32_t result;
+	} /*_PARAMS_SQUALL*/;
+	struct {
+		void* hWindow;
+		uint32_t nMessage;
+		uint32_t wParam;
+		int32_t lParam;
+		uint32_t nNotifyCode;
+		void* pExtra;
+		int32_t bUseResult;
+		int32_t lResult;
+	} /*_PARAMS_D2*/;
 } PARAMS;
+
+typedef PARAMS SMSGHANDLER_PARAMS;
 
 typedef void (STORMAPI* SMSGHANDLER)(PARAMS*);
 
@@ -57,5 +86,7 @@ int32_t STORMAPI SMsgUnregisterKeyUp(HWND window, uint32_t id, SMSGHANDLER handl
 int32_t STORMAPI SMsgUnregisterMessage(HWND window, uint32_t id, SMSGHANDLER handler);
 
 int32_t STORMAPI SMsgUnregisterSysCommand(HWND window, uint32_t id, SMSGHANDLER handler);
+
+#undef HWND
 
 #endif

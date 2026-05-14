@@ -66,4 +66,4 @@ BOOL STORMAPI SRegLoadString(const char* keyname, const char* valuename, uint32_
 BOOL STORMAPI SRegLoadValue(const char* keyname, const char* valuename, uint32_t nFlags, DWORD* value);
 BOOL STORMAPI SRegSaveData(const char* keyname, const char* valuename, uint8_t nFlags, char* lpData, DWORD cbData);
 BOOL STORMAPI SRegSaveString(const char* keyname, const char* valuename, uint8_t nFlags, const char* string);
-BOOL STORMAPI SRegSaveValue(const char* keyname, const char* valuename, uint8_t nFlags);
+BOOL STORMAPI SRegSaveValue(const char* keyname, const char* valuename, uint8_t nFlags, uint32_t unused);

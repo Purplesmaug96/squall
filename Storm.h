@@ -17,6 +17,7 @@
 #include "storm/Array.hpp"
 #include "storm/Atomic.hpp"
 #include "storm/Registry.hpp"
+#include "storm/Message.hpp"
 
 #include <string.h>
 

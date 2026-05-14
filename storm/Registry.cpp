@@ -305,7 +305,7 @@ BOOL STORMAPI SRegSaveString(const char* keyname, const char* valuename, uint8_t
     return SRegSaveData(keyname, valuename, nFlags, (char*)string, (DWORD)(strlen(string) + 1));
 }
 
-BOOL STORMAPI SRegSaveValue(const char* keyname, const char* valuename, uint8_t nFlags) {
+BOOL STORMAPI SRegSaveValue(const char* keyname, const char* valuename, uint8_t nFlags, uint32_t result) {
     DWORD one = 1;
     return SRegSaveData(keyname, valuename, nFlags, (char*)&one, sizeof(one));
 }
@@ -340,7 +340,7 @@ BOOL STORMAPI SRegSaveString(const char* keyname, const char* valuename, uint8_t
 	printf("Stubbed function SRegSaveString called\n");
 }
 
-BOOL STORMAPI SRegSaveValue(const char* keyname, const char* valuename, uint8_t nFlags) {
+BOOL STORMAPI SRegSaveValue(const char* keyname, const char* valuename, uint8_t nFlags, uint32_t result) {
 	printf("Stubbed function SRegSaveValue called\n");
 }
 
