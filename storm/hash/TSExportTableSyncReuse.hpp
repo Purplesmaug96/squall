@@ -17,7 +17,7 @@ class TSExportTableSyncReuse : public TSExportTableSimpleReuse<T, THandle> {
     T* NewLock(THandle* handlePtr, TLockedHandle* lockedHandlePtr);
     void Unlock(TLockedHandle lockedHandle);
 
-    private:
+    // private: // Needed for D2
     // Member variables
     TSync m_sync;
 

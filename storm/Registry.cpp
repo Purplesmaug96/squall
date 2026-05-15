@@ -314,34 +314,42 @@ BOOL STORMAPI SRegSaveValue(const char* keyname, const char* valuename, uint8_t 
 
 BOOL STORMAPI SRegDeleteValue(const char* keyname, const char* valuename, HKEY phkResult) {
 	printf("Stubbed function SRegDeleteValue called\n");
+	return FALSE;
 }
 
 BOOL STORMAPI SRegGetBaseKey(char flags, char* buffer, size_t bufferchars) {
 	printf("Stubbed function SRegGetBaseKey called\n");
+	return FALSE;
 }
 
 BOOL STORMAPI SRegLoadData(const char* keyname, const char* valuename, size_t nSize, LPBYTE, uint32_t nFlags, LPDWORD lpcbData) {
 	printf("Stubbed function SRegLoadData called\n");
+	return FALSE;
 }
 
 BOOL STORMAPI SRegLoadString(const char* keyname, const char* valuename, uint32_t nFlags, LPSTR pBuffer, size_t nBufferSize) {
 	printf("Stubbed function SRegLoadString called\n");
+	return FALSE;
 }
 
 BOOL STORMAPI SRegLoadValue(const char* keyname, const char* valuename, uint32_t nFlags, DWORD* value) {
 	printf("Stubbed function SRegLoadValue called\n");
+	return FALSE;
 }
 
 BOOL STORMAPI SRegSaveData(const char* keyname, const char* valuename, uint8_t nFlags, char* lpData, DWORD cbData) {
 	printf("Stubbed function SRegSaveData called\n");
+	return FALSE;
 }
 
 BOOL STORMAPI SRegSaveString(const char* keyname, const char* valuename, uint8_t nFlags, const char* string) {
 	printf("Stubbed function SRegSaveString called\n");
+	return FALSE;
 }
 
 BOOL STORMAPI SRegSaveValue(const char* keyname, const char* valuename, uint8_t nFlags, uint32_t result) {
 	printf("Stubbed function SRegSaveValue called\n");
+	return FALSE;
 }
 
 #endif
