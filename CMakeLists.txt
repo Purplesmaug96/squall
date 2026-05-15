@@ -70,6 +70,9 @@ else()
     add_definitions(-DWHOA_DISPLAY_ERR_EXTRA_ARG)
 endif()
 
+# There's probably a better way to do this
+add_definitions(-fpermissive)
+
 # OS defines
 if(WHOA_SYSTEM_WIN)
     # Implicit behavior of CriticalSection
