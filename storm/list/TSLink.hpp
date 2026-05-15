@@ -69,7 +69,7 @@ T* TSLink<T>::RawNext() {
 
 template <class T>
 void TSLink<T>::Unlink() {
-    if (this->m_prevlink) {
+    if (!this && ((uintptr_t)this & 3) != 0 && this->m_prevlink) {
         this->NextLink(-1)->m_prevlink = this->m_prevlink;
         this->m_prevlink->m_next = this->m_next;
 

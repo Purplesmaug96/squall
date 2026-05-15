@@ -239,6 +239,38 @@ T* TSList<T, TGetLink>::Tail() {
     return this->m_terminator.Prev();
 }
 
+#ifdef WHOA_STORM_FLAVOR_DIABLO2
+template <class T, class TGetLink>
+void TSList<T, TGetLink>::UnlinkAll() {
+    T* node;
+    int safetyCounter = 0;
+
+    // 1. We fetch the Head of the list
+    while ((node = this->Head())) {
+
+        // 2. CRITICAL SAFETY CHECK:
+        // Check if the node is NULL, unaligned (like 0x804a6e7),
+        // or pointing to the "Zero Page" (< 0x1000).
+        uintptr_t addr = reinterpret_cast<uintptr_t>(node);
+        if (addr < 0x1000 || (addr & 0x3) != 0) {
+            // Logically "Empty" the list immediately if corruption is found.
+            // This prevents passing the junk pointer to UnlinkNode.
+            m_terminator.m_next = reinterpret_cast<T*>(&m_terminator);
+            m_terminator.m_prevlink = reinterpret_cast<TSLink<T>*>(&m_terminator.m_next);
+            break;
+        }
+
+        // 3. If the pointer looks sane, proceed with unlinking
+        this->UnlinkNode(node);
+
+        // 4. Infinite loop protection (just in case)
+        if (++safetyCounter > 100000) {
+            m_terminator.m_next = reinterpret_cast<T*>(&m_terminator);
+            break;
+        }
+    }
+}
+#else
 template <class T, class TGetLink>
 void TSList<T, TGetLink>::UnlinkAll() {
     T* node;
@@ -247,6 +279,7 @@ void TSList<T, TGetLink>::UnlinkAll() {
         this->UnlinkNode(node);
     }
 }
+#endif
 
 template <class T, class TGetLink>
 void TSList<T, TGetLink>::UnlinkNode(T* node) {
