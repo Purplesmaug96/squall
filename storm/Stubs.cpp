@@ -101,8 +101,8 @@ void SFileDdaGetVolume() { printf("Stubbed function %s called\n", "SFileDdaGetVo
 void SFileDdaSetVolume() { printf("Stubbed function %s called\n", "SFileDdaSetVolume"); }
 void SFileGetFileArchive() { printf("Stubbed function %s called\n", "SFileGetFileArchive"); }
 void SFileDestroy() { printf("Stubbed function %s called\n", "SFileDestroy"); }
-void SFileEnableDirectAccess() { printf("Stubbed function %s called\n", "SFileEnableDirectAccess"); }
-void SFileEnableSeekOptimization() { printf("Stubbed function %s called\n", "SFileEnableSeekOptimization"); }
+BOOL STORMAPI SFileEnableDirectAccess(HANDLE hFile) { printf("Stubbed function %s called\n", "SFileEnableDirectAccess"); return FALSE; }
+BOOL STORMAPI SFileEnableSeekOptimization(BOOL bEnabled) { printf("Stubbed function %s called\n", "SFileEnableSeekOptimization"); return FALSE; }
 void SFileFileExists() { printf("Stubbed function %s called\n", "SFileFileExists"); }
 void SFileFileExistsEx() { printf("Stubbed function %s called\n", "SFileFileExistsEx"); }
 void SFileGetArchiveInfo() { printf("Stubbed function %s called\n", "SFileGetArchiveInfo"); }
@@ -115,9 +115,9 @@ void SFilePrioritizeRequest() { printf("Stubbed function %s called\n", "SFilePri
 void SFileReadFileEx() { printf("Stubbed function %s called\n", "SFileReadFileEx"); }
 void SFileReadFileEx2() { printf("Stubbed function %s called\n", "SFileReadFileEx2"); }
 void SFileSetAsyncBudget() { printf("Stubbed function %s called\n", "SFileSetAsyncBudget"); }
-void SFileSetBasePath() { printf("Stubbed function %s called\n", "SFileSetBasePath"); }
+BOOL STORMAPI SFileSetBasePath(char* path) { printf("Stubbed function %s called\n", "SFileSetBasePath"); return FALSE; }
 void SFileSetDataChunkSize() { printf("Stubbed function %s called\n", "SFileSetDataChunkSize"); }
-void SFileSetIoErrorMode() { printf("Stubbed function %s called\n", "SFileSetIoErrorMode"); }
+BOOL STORMAPI SFileSetIoErrorMode(int a1, int a2) { printf("Stubbed function %s called\n", "SFileSetIoErrorMode"); return FALSE; }
 void SFileSetPlatform() { printf("Stubbed function %s called\n", "SFileSetPlatform"); }
 void SFileUnloadFile() { printf("Stubbed function %s called\n", "SFileUnloadFile"); }
 void SGdi392() { printf("Stubbed function %s called\n", "SGdi392"); }
@@ -155,22 +155,22 @@ void SMemHeapDestroy() { printf("Stubbed function %s called\n", "SMemHeapDestroy
 void SMemHeapFree() { printf("Stubbed function %s called\n", "SMemHeapFree"); }
 void SMemHeapRealloc() { printf("Stubbed function %s called\n", "SMemHeapRealloc"); }
 void SMemHeapSize() { printf("Stubbed function %s called\n", "SMemHeapSize"); }
-void SMsgBreakHandlerChain() { printf("Stubbed function %s called\n", "SMsgBreakHandlerChain"); }
-void SMsgDispatchMessage() { printf("Stubbed function %s called\n", "SMsgDispatchMessage"); }
-void SMsgDoMessageLoop() { printf("Stubbed function %s called\n", "SMsgDoMessageLoop"); }
-void SMsgGetDefaultWindow() { printf("Stubbed function %s called\n", "SMsgGetDefaultWindow"); }
-void SMsgGetDispatcher() { printf("Stubbed function %s called\n", "SMsgGetDispatcher"); }
-void SMsgPopRegisterState() { printf("Stubbed function %s called\n", "SMsgPopRegisterState"); }
-void SMsgPushRegisterState() { printf("Stubbed function %s called\n", "SMsgPushRegisterState"); }
-void SMsgRegisterCommand() { printf("Stubbed function %s called\n", "SMsgRegisterCommand"); }
-void SMsgRegisterKeyDown() { printf("Stubbed function %s called\n", "SMsgRegisterKeyDown"); }
-void SMsgRegisterKeyUp() { printf("Stubbed function %s called\n", "SMsgRegisterKeyUp"); }
-void SMsgRegisterMessage() { printf("Stubbed function %s called\n", "SMsgRegisterMessage"); }
-void SMsgSetDefaultWindow() { printf("Stubbed function %s called\n", "SMsgSetDefaultWindow"); }
-void SMsgUnregisterCommand() { printf("Stubbed function %s called\n", "SMsgUnregisterCommand"); }
-void SMsgUnregisterKeyDown() { printf("Stubbed function %s called\n", "SMsgUnregisterKeyDown"); }
-void SMsgUnregisterKeyUp() { printf("Stubbed function %s called\n", "SMsgUnregisterKeyUp"); }
-void SMsgUnregisterMessage() { printf("Stubbed function %s called\n", "SMsgUnregisterMessage"); }
+// void SMsgBreakHandlerChain() { printf("Stubbed function %s called\n", "SMsgBreakHandlerChain"); }
+// void SMsgDispatchMessage() { printf("Stubbed function %s called\n", "SMsgDispatchMessage"); }
+// void SMsgDoMessageLoop() { printf("Stubbed function %s called\n", "SMsgDoMessageLoop"); }
+// void SMsgGetDefaultWindow() { printf("Stubbed function %s called\n", "SMsgGetDefaultWindow"); }
+// void SMsgGetDispatcher() { printf("Stubbed function %s called\n", "SMsgGetDispatcher"); }
+// void SMsgPopRegisterState() { printf("Stubbed function %s called\n", "SMsgPopRegisterState"); }
+// void SMsgPushRegisterState() { printf("Stubbed function %s called\n", "SMsgPushRegisterState"); }
+// void SMsgRegisterCommand() { printf("Stubbed function %s called\n", "SMsgRegisterCommand"); }
+// void SMsgRegisterKeyDown() { printf("Stubbed function %s called\n", "SMsgRegisterKeyDown"); }
+// void SMsgRegisterKeyUp() { printf("Stubbed function %s called\n", "SMsgRegisterKeyUp"); }
+// void SMsgRegisterMessage() { printf("Stubbed function %s called\n", "SMsgRegisterMessage"); }
+// void SMsgSetDefaultWindow() { printf("Stubbed function %s called\n", "SMsgSetDefaultWindow"); }
+// void SMsgUnregisterCommand() { printf("Stubbed function %s called\n", "SMsgUnregisterCommand"); }
+// void SMsgUnregisterKeyDown() { printf("Stubbed function %s called\n", "SMsgUnregisterKeyDown"); }
+// void SMsgUnregisterKeyUp() { printf("Stubbed function %s called\n", "SMsgUnregisterKeyUp"); }
+// void SMsgUnregisterMessage() { printf("Stubbed function %s called\n", "SMsgUnregisterMessage"); }
 void SNetCheckDataFile() { printf("Stubbed function %s called\n", "SNetCheckDataFile"); }
 void SNetCreateGame() { printf("Stubbed function %s called\n", "SNetCreateGame"); }
 void SNetCreateLadderGame() { printf("Stubbed function %s called\n", "SNetCreateLadderGame"); }
@@ -259,5 +259,5 @@ void SVidPlayEnd() { printf("Stubbed function %s called\n", "SVidPlayEnd"); }
 void SVidPlayContinueSingle() { printf("Stubbed function %s called\n", "SVidPlayContinueSingle"); }
 void SVidSetVolume() { printf("Stubbed function %s called\n", "SVidSetVolume"); }
 void StormGetInstance() { printf("Stubbed function %s called\n", "StormGetInstance"); }
-void StormGetOption() { printf("Stubbed function %s called\n", "StormGetOption"); }
-void StormSetOption() { printf("Stubbed function %s called\n", "StormSetOption"); }
+BOOL STORMAPI StormGetOption(int type, int optval, size_t optlen) { printf("Stubbed function %s called\n", "StormGetOption"); return FALSE; }
+BOOL STORMAPI StormSetOption(int type, int optval, size_t optlen) { printf("Stubbed function %s called\n", "StormSetOption"); return FALSE; }

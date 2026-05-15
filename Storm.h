@@ -18,6 +18,7 @@
 #include "storm/Atomic.hpp"
 #include "storm/Registry.hpp"
 #include "storm/Message.hpp"
+#include "storm/Stubs.hpp"
 
 #include <string.h>
 

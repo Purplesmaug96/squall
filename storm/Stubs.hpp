@@ -1,5 +1,17 @@
 #pragma once
 
+#include "Core.hpp"
+
+#ifdef __windows_shim
+#include <windef.h>
+#else
+typedef int BOOL;
+typedef void* HANDLE;
+
+#define TRUE true
+#define FALSE false
+#endif
+
 void Ordinal393();
 void SBigFindPrime();
 void SBigFromStream();
@@ -100,8 +112,8 @@ void SFileDdaGetVolume();
 void SFileDdaSetVolume();
 void SFileGetFileArchive();
 void SFileDestroy();
-void SFileEnableDirectAccess();
-void SFileEnableSeekOptimization();
+BOOL STORMAPI SFileEnableDirectAccess(HANDLE hFile);
+BOOL STORMAPI SFileEnableSeekOptimization(BOOL bEnabled);
 void SFileFileExists();
 void SFileFileExistsEx();
 void SFileGetArchiveInfo();
@@ -114,9 +126,9 @@ void SFilePrioritizeRequest();
 void SFileReadFileEx();
 void SFileReadFileEx2();
 void SFileSetAsyncBudget();
-void SFileSetBasePath();
+BOOL STORMAPI SFileSetBasePath(char* path);
 void SFileSetDataChunkSize();
-void SFileSetIoErrorMode();
+BOOL STORMAPI SFileSetIoErrorMode(int a1, int a2);
 void SFileSetPlatform();
 void SFileUnloadFile();
 void SGdi392();
@@ -154,22 +166,22 @@ void SMemHeapDestroy();
 void SMemHeapFree();
 void SMemHeapRealloc();
 void SMemHeapSize();
-void SMsgBreakHandlerChain();
-void SMsgDispatchMessage();
-void SMsgDoMessageLoop();
-void SMsgGetDefaultWindow();
-void SMsgGetDispatcher();
-void SMsgPopRegisterState();
-void SMsgPushRegisterState();
-void SMsgRegisterCommand();
-void SMsgRegisterKeyDown();
-void SMsgRegisterKeyUp();
-void SMsgRegisterMessage();
-void SMsgSetDefaultWindow();
-void SMsgUnregisterCommand();
-void SMsgUnregisterKeyDown();
-void SMsgUnregisterKeyUp();
-void SMsgUnregisterMessage();
+// void SMsgBreakHandlerChain();
+// void SMsgDispatchMessage();
+// void SMsgDoMessageLoop();
+// void SMsgGetDefaultWindow();
+// void SMsgGetDispatcher();
+// void SMsgPopRegisterState();
+// void SMsgPushRegisterState();
+// void SMsgRegisterCommand();
+// void SMsgRegisterKeyDown();
+// void SMsgRegisterKeyUp();
+// void SMsgRegisterMessage();
+// void SMsgSetDefaultWindow();
+// void SMsgUnregisterCommand();
+// void SMsgUnregisterKeyDown();
+// void SMsgUnregisterKeyUp();
+// void SMsgUnregisterMessage();
 void SNetCheckDataFile();
 void SNetCreateGame();
 void SNetCreateLadderGame();
@@ -258,5 +270,5 @@ void SVidPlayEnd();
 void SVidPlayContinueSingle();
 void SVidSetVolume();
 void StormGetInstance();
-void StormGetOption();
-void StormSetOption();
+BOOL STORMAPI StormGetOption(int type, int optval, size_t optlen);
+BOOL STORMAPI StormSetOption(int type, int optval, size_t optlen);
