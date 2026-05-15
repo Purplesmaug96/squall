@@ -51,11 +51,11 @@ void DeleteWindow(HWND window) {
     }
     WNDREC* ptr = FindWindow(window);
     if (ptr) {
-        SEvtUnregisterType(REGISTERTYPE_MESSAGE, reinterpret_cast<uint32_t>(window));
-        SEvtUnregisterType(REGISTERTYPE_COMMAND, reinterpret_cast<uint32_t>(window));
-        SEvtUnregisterType(REGISTERTYPE_SYSCOMMAND, reinterpret_cast<uint32_t>(window));
-        SEvtUnregisterType(REGISTERTYPE_KEYUP, reinterpret_cast<uint32_t>(window));
-        SEvtUnregisterType(REGISTERTYPE_KEYDOWN, reinterpret_cast<uint32_t>(window));
+        SEvtUnregisterType(REGISTERTYPE_MESSAGE, reinterpret_cast<uintptr_t>(window));
+        SEvtUnregisterType(REGISTERTYPE_COMMAND, reinterpret_cast<uintptr_t>(window));
+        SEvtUnregisterType(REGISTERTYPE_SYSCOMMAND, reinterpret_cast<uintptr_t>(window));
+        SEvtUnregisterType(REGISTERTYPE_KEYUP, reinterpret_cast<uintptr_t>(window));
+        SEvtUnregisterType(REGISTERTYPE_KEYDOWN, reinterpret_cast<uintptr_t>(window));
         s_wndlist.DeleteNode(ptr);
     }
 }
@@ -75,14 +75,14 @@ int32_t InternalRegister(uint32_t type, HWND window, uint32_t id, SMSGHANDLER ha
     if (!FindWindow(window)) {
         AddWindow(window);
     }
-    return SEvtRegisterHandler(type, reinterpret_cast<uint32_t>(window), id, 0, reinterpret_cast<SEVTHANDLER>(handler));
+    return SEvtRegisterHandler(type, reinterpret_cast<uintptr_t>(window), id, 0, reinterpret_cast<SEVTHANDLER>(handler));
 }
 
 int32_t InternalUnregister(uint32_t type, HWND window, uint32_t id, SMSGHANDLER handler) {
     if (!FindWindow(window)) {
         AddWindow(window);
     }
-    return SEvtUnregisterHandler(type, reinterpret_cast<uint32_t>(window), id, reinterpret_cast<SEVTHANDLER>(handler));
+    return SEvtUnregisterHandler(type, reinterpret_cast<uintptr_t>(window), id, reinterpret_cast<SEVTHANDLER>(handler));
 }
 
 int32_t STORMAPI SMsgBreakHandlerChain(PARAMS* params) {
@@ -111,19 +111,19 @@ int32_t STORMAPI SMsgDispatchMessage(HWND window, uint32_t message, uint32_t wpa
 
     HWND wnd = window;
     while(1) {
-        SEvtDispatch(REGISTERTYPE_MESSAGE, reinterpret_cast<uint32_t>(wnd), message, &params);
+        SEvtDispatch(REGISTERTYPE_MESSAGE, reinterpret_cast<uintptr_t>(wnd), message, &params);
         switch(message) {
         case WM_KEYDOWN:
-            SEvtDispatch(REGISTERTYPE_KEYDOWN, reinterpret_cast<uint32_t>(wnd), wparam, &params);
+            SEvtDispatch(REGISTERTYPE_KEYDOWN, reinterpret_cast<uintptr_t>(wnd), wparam, &params);
             break;
         case WM_KEYUP:
-            SEvtDispatch(REGISTERTYPE_KEYUP, reinterpret_cast<uint32_t>(wnd), wparam, &params);
+            SEvtDispatch(REGISTERTYPE_KEYUP, reinterpret_cast<uintptr_t>(wnd), wparam, &params);
             break;
         case WM_COMMAND:
-            SEvtDispatch(REGISTERTYPE_COMMAND, reinterpret_cast<uint32_t>(wnd), wparam & 0xFFFF, &params);
+            SEvtDispatch(REGISTERTYPE_COMMAND, reinterpret_cast<uintptr_t>(wnd), wparam & 0xFFFF, &params);
             break;
         case WM_SYSCOMMAND:
-            SEvtDispatch(REGISTERTYPE_SYSCOMMAND, reinterpret_cast<uint32_t>(wnd), wparam, &params);
+            SEvtDispatch(REGISTERTYPE_SYSCOMMAND, reinterpret_cast<uintptr_t>(wnd), wparam, &params);
             break;
         }
 
@@ -159,20 +159,20 @@ int32_t STORMAPI SMsgGetDefaultWindowRect(RECT* rect) {
 }
 
 int32_t STORMAPI SMsgPopRegisterState(HWND window) {
-    SEvtPopState(REGISTERTYPE_COMMAND, reinterpret_cast<uint32_t>(window));
-    SEvtPopState(REGISTERTYPE_SYSCOMMAND, reinterpret_cast<uint32_t>(window));
-    SEvtPopState(REGISTERTYPE_KEYDOWN, reinterpret_cast<uint32_t>(window));
-    SEvtPopState(REGISTERTYPE_KEYUP, reinterpret_cast<uint32_t>(window));
-    SEvtPopState(REGISTERTYPE_MESSAGE, reinterpret_cast<uint32_t>(window));
+    SEvtPopState(REGISTERTYPE_COMMAND, reinterpret_cast<uintptr_t>(window));
+    SEvtPopState(REGISTERTYPE_SYSCOMMAND, reinterpret_cast<uintptr_t>(window));
+    SEvtPopState(REGISTERTYPE_KEYDOWN, reinterpret_cast<uintptr_t>(window));
+    SEvtPopState(REGISTERTYPE_KEYUP, reinterpret_cast<uintptr_t>(window));
+    SEvtPopState(REGISTERTYPE_MESSAGE, reinterpret_cast<uintptr_t>(window));
     return 1;
 }
 
 int32_t STORMAPI SMsgPushRegisterState(HWND window) {
-    SEvtPushState(REGISTERTYPE_COMMAND, reinterpret_cast<uint32_t>(window));
-    SEvtPushState(REGISTERTYPE_SYSCOMMAND, reinterpret_cast<uint32_t>(window));
-    SEvtPushState(REGISTERTYPE_KEYDOWN, reinterpret_cast<uint32_t>(window));
-    SEvtPushState(REGISTERTYPE_KEYUP, reinterpret_cast<uint32_t>(window));
-    SEvtPushState(REGISTERTYPE_MESSAGE, reinterpret_cast<uint32_t>(window));
+    SEvtPushState(REGISTERTYPE_COMMAND, reinterpret_cast<uintptr_t>(window));
+    SEvtPushState(REGISTERTYPE_SYSCOMMAND, reinterpret_cast<uintptr_t>(window));
+    SEvtPushState(REGISTERTYPE_KEYDOWN, reinterpret_cast<uintptr_t>(window));
+    SEvtPushState(REGISTERTYPE_KEYUP, reinterpret_cast<uintptr_t>(window));
+    SEvtPushState(REGISTERTYPE_MESSAGE, reinterpret_cast<uintptr_t>(window));
     return 1;
 }
 
@@ -204,7 +204,7 @@ int32_t STORMAPI SMsgSetDefaultWindow(HWND window) {
 void STORMAPI SMsgSetDefaultWindowRect(RECT* rect) {
     STORM_VALIDATE_BEGIN;
     STORM_VALIDATE(rect);
-    STORM_VALIDATE_END;
+    STORM_VALIDATE_END_VOID;
 
     s_defaultwindowrect = *rect;
 }

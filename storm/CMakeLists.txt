@@ -40,7 +40,7 @@ if(WHOA_SYSTEM_MAC)
     list(APPEND STORM_SOURCES ${STORM_MAC_SOURCES})
 endif()
 
-if(WHOA_SYSTEM_LINUX)
+if(WHOA_SYSTEM_LINUX OR ANDROID)
     file(GLOB STORM_LINUX_SOURCES
         "linux/*.cpp"
         "thread/linux/*.cpp"
@@ -74,7 +74,7 @@ if(WHOA_SYSTEM_MAC)
 	target_compile_definitions(storm PRIVATE WHOA_SYSTEM_MAC)
 endif()
 
-if(WHOA_SYSTEM_LINUX)
+if(WHOA_SYSTEM_LINUX OR ANDROID)
 	target_compile_definitions(storm PRIVATE WHOA_SYSTEM_LINUX)
 endif()
 
