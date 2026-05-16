@@ -12,6 +12,6 @@
 
 void* SCreateThread(uint32_t (*threadProc)(void*), void* threadParam, void* a3, SThread* syncObject, const char* threadName);
 
-uintptr_t SGetCurrentThreadId();
+long unsigned int SGetCurrentThreadId();
 
 #endif
