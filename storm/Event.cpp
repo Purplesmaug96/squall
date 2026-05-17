@@ -133,6 +133,25 @@ int32_t STORMAPI SEvtDestroy() {
     return 1;
 }
 
+#include <unistd.h>
+#include <errno.h>
+
+// Safely checks if a pointer can be read without crashing
+static bool __IsValidReadPtr(const void* ptr, size_t size) {
+    if (!ptr || reinterpret_cast<uintptr_t>(ptr) < 0x1000) return false;
+
+    int pfd[2];
+    if (pipe(pfd) < 0) return false;
+
+    // Attempt to write from the pointer into a pipe.
+    // If the pointer is invalid, write() returns -1 and sets errno to EFAULT instead of crashing.
+    ssize_t result = write(pfd[1], ptr, size);
+    close(pfd[0]);
+    close(pfd[1]);
+
+    return result == static_cast<ssize_t>(size);
+}
+
 int32_t STORMAPI SEvtDispatch(uint32_t type, uint32_t subtype, uint32_t id, void* data) {
     SInterlockedIncrement(&s_dispatchesinprogress);
 
@@ -144,13 +163,49 @@ int32_t STORMAPI SEvtDispatch(uint32_t type, uint32_t subtype, uint32_t id, void
         s_critsect.Enter();
 
         bool breakcmd = false;
-        for (BREAKCMD* curr = s_breakcmdlist.Head(); reinterpret_cast<intptr_t>(curr) > 0; curr = s_breakcmdlist.RawNext(curr)) {
-            if (curr->data == data) {
+        BREAKCMD* curr = s_breakcmdlist.Head();
+
+        while (reinterpret_cast<intptr_t>(curr) > 0) {
+            BREAKCMD* nextNode = nullptr;
+            bool is_match = false;
+
+            // Protect against a corrupted curr pointer or invalid memory access inside RawNext
+            #ifdef _WIN32
+            __try {
+                is_match = (curr->data == data);
+                nextNode = s_breakcmdlist.RawNext(curr);
+            } __except (1) { break; }
+            #else
+            // POSIX/Linux fallback if SEH isn't available: manual validation check
+            if (!__IsValidReadPtr(curr, sizeof(BREAKCMD)) || !curr || reinterpret_cast<uintptr_t>(curr) < 0x1000) { break; }
+            is_match = (curr->data == data);
+            nextNode = curr->m_link.m_next;
+            #endif
+
+            if (is_match) {
                 breakcmd = true;
+
+                // Manual bypass: isolate the node entirely so destructors/lists won't crawl it
+                if (curr->m_link.m_prevlink) {
+                    BREAKCMD* nxt = curr->m_link.m_next;
+                    TSLink<BREAKCMD>* nxtLnk = (reinterpret_cast<intptr_t>(nxt) <= 0)
+                        ? reinterpret_cast<TSLink<BREAKCMD>*>(~reinterpret_cast<uintptr_t>(nxt))
+                        : &nxt->m_link;
+
+                    if (nxtLnk) nxtLnk->m_prevlink = curr->m_link.m_prevlink;
+                    curr->m_link.m_prevlink->m_next = nxt;
+                }
+
+                curr->m_link.m_prevlink = nullptr;
+                curr->m_link.m_next = nullptr;
+
                 s_breakcmdlist.DeleteNode(curr);
                 break;
             }
+
+            curr = nextNode;
         }
+
         if (breakcmd) {
             s_critsect.Leave();
             break;
@@ -195,16 +250,43 @@ int32_t STORMAPI SEvtDispatch(uint32_t type, uint32_t subtype, uint32_t id, void
 
     SInterlockedDecrement(&s_dispatchesinprogress);
 
-    if (s_breakcmdlist.Head()) {
+	if (reinterpret_cast<intptr_t>(s_breakcmdlist.Head()) > 0) {
         s_critsect.Enter();
 
-        for (BREAKCMD* curr = s_breakcmdlist.Head(); reinterpret_cast<intptr_t>(curr) > 0;) {
-            if (curr->data == data) {
-                curr = s_breakcmdlist.DeleteNode(curr);
+        BREAKCMD* curr = s_breakcmdlist.Head();
+        while (reinterpret_cast<intptr_t>(curr) > 0) {
+            BREAKCMD* nextNode = nullptr;
+            bool is_match = false;
+
+            #ifdef _WIN32
+            __try {
+                is_match = (curr->data == data);
+                nextNode = s_breakcmdlist.RawNext(curr);
+            } __except (1) { break; }
+            #else
+            if (!__IsValidReadPtr(curr, sizeof(BREAKCMD)) || !curr || reinterpret_cast<uintptr_t>(curr) < 0x1000) { break; }
+            is_match = (curr->data == data);
+            nextNode = curr->m_link.m_next;
+            #endif
+
+            if (is_match) {
+                if (curr->m_link.m_prevlink) {
+                    BREAKCMD* nxt = curr->m_link.m_next;
+                    TSLink<BREAKCMD>* nxtLnk = (reinterpret_cast<intptr_t>(nxt) <= 0)
+                        ? reinterpret_cast<TSLink<BREAKCMD>*>(~reinterpret_cast<uintptr_t>(nxt))
+                        : &nxt->m_link;
+
+                    if (nxtLnk) nxtLnk->m_prevlink = curr->m_link.m_prevlink;
+                    curr->m_link.m_prevlink->m_next = nxt;
+                }
+
+                curr->m_link.m_prevlink = nullptr;
+                curr->m_link.m_next = nullptr;
+
+                s_breakcmdlist.DeleteNode(curr);
             }
-            else {
-                curr = s_breakcmdlist.RawNext(curr);
-            }
+
+            curr = nextNode;
         }
 
         s_critsect.Leave();
