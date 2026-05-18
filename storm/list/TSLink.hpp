@@ -67,9 +67,28 @@ T* TSLink<T>::RawNext() {
     return this->m_next;
 }
 
+#include <unistd.h>
+#include <errno.h>
+
+// Safely checks if a pointer can be read without crashing
+static inline bool __aIsValidReadPtr(const void* ptr, size_t size) {
+    if (!ptr || reinterpret_cast<uintptr_t>(ptr) < 0x1000) return false;
+
+    int pfd[2];
+    if (pipe(pfd) < 0) return false;
+
+    // Attempt to write from the pointer into a pipe.
+    // If the pointer is invalid, write() returns -1 and sets errno to EFAULT instead of crashing.
+    ssize_t result = write(pfd[1], ptr, size);
+    close(pfd[0]);
+    close(pfd[1]);
+
+    return result == static_cast<ssize_t>(size);
+}
+
 template <class T>
 void TSLink<T>::Unlink() {
-    if (this && this->m_prevlink) {
+    if (!__aIsValidReadPtr(this, 1) && !__aIsValidReadPtr(this->NextLink(-1), 1) && !__aIsValidReadPtr(this->NextLink(-1)->m_prevlink, 1) && this && this->m_prevlink) {
         this->NextLink(-1)->m_prevlink = this->m_prevlink;
         this->m_prevlink->m_next = this->m_next;
 

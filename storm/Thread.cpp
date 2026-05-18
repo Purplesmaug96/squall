@@ -14,6 +14,6 @@ long unsigned int SGetCurrentThreadId() {
 #endif
 
 #if defined(WHOA_SYSTEM_MAC) || defined(WHOA_SYSTEM_LINUX)
-    return reinterpret_cast<long unsigned int>(pthread_self());
+    return (long unsigned int)(pthread_self());
 #endif
 }
