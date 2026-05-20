@@ -7,7 +7,7 @@
 #include <windows.h>
 #endif
 
-#if defined(WHOA_SYSTEM_MAC) || defined(WHOA_SYSTEM_LINUX) || defined(WHOA_SYSTEM_ANDROID)
+#if defined(WHOA_SYSTEM_MAC) || defined(WHOA_SYSTEM_LINUX) || defined(WHOA_SYSTEM_ANDROID) || defined(WHOA_SYSTEM_WII)
 #include <pthread.h>
 #endif
 
@@ -27,7 +27,7 @@ class CCritSect {
     CRITICAL_SECTION m_critsect;
 #endif
 
-#if defined(WHOA_SYSTEM_MAC) || defined(WHOA_SYSTEM_LINUX) || defined(WHOA_SYSTEM_ANDROID)
+#if defined(WHOA_SYSTEM_MAC) || defined(WHOA_SYSTEM_LINUX) || defined(WHOA_SYSTEM_ANDROID) || defined(WHOA_SYSTEM_WII)
     pthread_mutex_t m_critsect;
 #endif
 };
