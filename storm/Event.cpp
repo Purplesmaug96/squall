@@ -141,7 +141,9 @@ static bool __IsValidReadPtr(const void* ptr, size_t size) {
     if (!ptr || reinterpret_cast<uintptr_t>(ptr) < 0x1000) return false;
 
     int pfd[2];
+	#ifdef __linux__
     if (pipe(pfd) < 0) return false;
+	#endif
 
     // Attempt to write from the pointer into a pipe.
     // If the pointer is invalid, write() returns -1 and sets errno to EFAULT instead of crashing.
