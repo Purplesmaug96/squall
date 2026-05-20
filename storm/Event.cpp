@@ -170,7 +170,7 @@ int32_t STORMAPI SEvtDispatch(uint32_t type, uint32_t subtype, uint32_t id, void
             bool is_match = false;
 
             // Protect against a corrupted curr pointer or invalid memory access inside RawNext
-            #ifdef _WIN32
+            #ifdef WHOA_SYSTEM_WIN
             __try {
                 is_match = (curr->data == data);
                 nextNode = s_breakcmdlist.RawNext(curr);

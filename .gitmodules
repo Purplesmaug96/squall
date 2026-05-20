@@ -1,6 +1,6 @@
 [submodule "lib/system"]
 	path = lib/system
-	url = https://github.com/whoahq/system
+	url = https://github.com/Purplesmaug96/system.git
 [submodule "vendor/StormLib"]
 	path = vendor/StormLib
 	url = https://github.com/Purplesmaug96/StormLib.git

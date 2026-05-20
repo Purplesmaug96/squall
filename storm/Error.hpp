@@ -10,7 +10,7 @@
 #include <wtypes.h>
 #endif
 
-#if defined(WHOA_SYSTEM_MAC) || defined(WHOA_SYSTEM_LINUX)
+#if defined(WHOA_SYSTEM_MAC) || defined(WHOA_SYSTEM_LINUX) || defined(WHOA_SYSTEM_ANDROID)
 #define ERROR_SUCCESS           0
 #define ERROR_FILE_NOT_FOUND    2
 #define ERROR_INVALID_HANDLE    6

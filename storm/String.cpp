@@ -12,7 +12,7 @@
 #include <string.h>
 #endif
 
-#if defined(WHOA_SYSTEM_MAC) || defined(WHOA_SYSTEM_LINUX)
+#if defined(WHOA_SYSTEM_MAC) || defined(WHOA_SYSTEM_LINUX) || defined(WHOA_SYSTEM_ANDROID)
 #include <strings.h>
 #endif
 
@@ -326,7 +326,7 @@ int32_t STORMAPI SStrCmpI(const char* string1, const char* string2, size_t maxch
     return _strnicmp(string1, string2, maxchars);
 #endif
 
-#if defined(WHOA_SYSTEM_MAC) || defined(WHOA_SYSTEM_LINUX)
+#if defined(WHOA_SYSTEM_MAC) || defined(WHOA_SYSTEM_LINUX) || defined(WHOA_SYSTEM_ANDROID)
     return strncasecmp(string1, string2, maxchars);
 #endif
 }

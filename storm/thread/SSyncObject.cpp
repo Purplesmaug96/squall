@@ -1,13 +1,13 @@
 #include "storm/thread/SSyncObject.hpp"
 
-#if defined(WHOA_SYSTEM_MAC) || defined(WHOA_SYSTEM_LINUX)
+#if defined(WHOA_SYSTEM_MAC) || defined(WHOA_SYSTEM_LINUX) || defined(WHOA_SYSTEM_ANDROID)
 #include <cerrno>
 #include <sys/time.h>
 #include <unistd.h>
 #endif
 
 SSyncObject::SSyncObject() {
-#if defined(WHOA_SYSTEM_MAC) || defined(WHOA_SYSTEM_LINUX)
+#if defined(WHOA_SYSTEM_MAC) || defined(WHOA_SYSTEM_LINUX) || defined(WHOA_SYSTEM_ANDROID)
     pthread_mutex_init(&this->m_mutex, nullptr);
 #endif
 }
@@ -17,7 +17,7 @@ SSyncObject::~SSyncObject() {
     this->Close();
 #endif
 
-#if defined(WHOA_SYSTEM_MAC) || defined(WHOA_SYSTEM_LINUX)
+#if defined(WHOA_SYSTEM_MAC) || defined(WHOA_SYSTEM_LINUX) || defined(WHOA_SYSTEM_ANDROID)
     pthread_mutex_destroy(&this->m_mutex);
 #endif
 }
@@ -36,7 +36,7 @@ bool SSyncObject::Valid() {
     return this->m_opaqueData != nullptr;
 #endif
 
-#if defined(WHOA_SYSTEM_MAC) || defined(WHOA_SYSTEM_LINUX)
+#if defined(WHOA_SYSTEM_MAC) || defined(WHOA_SYSTEM_LINUX) || defined(WHOA_SYSTEM_ANDROID)
     return this->int0 - 1 <= 4;
 #endif
 }
@@ -46,7 +46,7 @@ uint32_t SSyncObject::Wait(uint32_t timeoutMs) {
     return WaitForSingleObject(this->m_opaqueData, timeoutMs);
 #endif
 
-#if defined(WHOA_SYSTEM_MAC) || defined(WHOA_SYSTEM_LINUX)
+#if defined(WHOA_SYSTEM_MAC) || defined(WHOA_SYSTEM_LINUX) || defined(WHOA_SYSTEM_ANDROID)
     if (this->int0 == 6) {
         // WAIT_FAILED
         return 0xFFFFFFFF;
