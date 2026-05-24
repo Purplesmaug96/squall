@@ -1,5 +1,11 @@
 #pragma once
 
+#ifdef _WIN32
+
+#include_next "Storm.h"
+
+#else
+
 #include "storm/String.hpp"
 #include "storm/Memory.hpp"
 #include "storm/Error.hpp"
@@ -23,3 +29,5 @@
 #include <string.h>
 
 #define SFileGetFileName(hFile, buffer, length) strncpy(buffer, "Unknown", length)
+
+#endif

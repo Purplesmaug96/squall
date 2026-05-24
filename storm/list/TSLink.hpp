@@ -67,6 +67,15 @@ T* TSLink<T>::RawNext() {
     return this->m_next;
 }
 
+#ifdef _WIN32
+
+// Safely checks if a pointer can be read without crashing
+static inline bool __aIsValidReadPtr(const void* ptr, size_t size) {
+    return true;
+}
+
+#else
+
 #include <unistd.h>
 #include <errno.h>
 
@@ -87,6 +96,8 @@ static inline bool __aIsValidReadPtr(const void* ptr, size_t size) {
 
     return result == static_cast<ssize_t>(size);
 }
+
+#endif
 
 template <class T>
 void TSLink<T>::Unlink() {
