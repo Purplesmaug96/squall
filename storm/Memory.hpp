@@ -33,10 +33,18 @@ void STORMAPI SMemFill(void* ptr, size_t bytes, uint8_t value);
 
 void STORMAPI SMemFree(void* ptr, const char* filename, int32_t linenumber, uint32_t flags = 0);
 
+#ifdef WHOA_STORM_FLAVOR_DIABLO2
+int STORMAPI SMemMove(void* dst, void* src, size_t bytes);
+#else
 void STORMAPI SMemMove(void* dst, void* src, size_t bytes);
+#endif
 
 void* STORMAPI SMemReAlloc(void* ptr, size_t bytes, const char* filename, int32_t linenumber, uint32_t flags = 0);
 
+#ifdef WHOA_STORM_FLAVOR_DIABLO2
+int STORMAPI SMemZero(void* ptr, size_t bytes);
+#else
 void STORMAPI SMemZero(void* ptr, size_t bytes);
+#endif
 
 #endif

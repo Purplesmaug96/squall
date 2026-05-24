@@ -5,7 +5,11 @@
 #include "String.hpp"
 #include "Transparency.hpp"
 
+#ifdef WHOA_STORM_FLAVOR_DIABLO2
 int32_t STORMAPI StormDestroy() {
+#else
+int32_t STORMCDECL StormDestroy() {
+#endif
     // Combined list of all destroy calls found in every game (as documentation)
 
     // SErrSetBlizzardErrorFunction(nullptr);   // SC 1.17

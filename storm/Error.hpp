@@ -6,7 +6,7 @@
 #include "Core.hpp"
 
 #if defined(WHOA_SYSTEM_WIN)
-#include <WinError.h>
+#include <winerror.h>
 #include <wtypes.h>
 #endif
 
@@ -18,6 +18,7 @@
 #define ERROR_HANDLE_EOF        38
 #define ERROR_INVALID_PARAMETER 87
 typedef uint32_t DWORD;
+typedef int BOOL;
 #endif
 
 [[noreturn]] void STORMCDECL SErrDisplayAppFatal(const char* format, ...);
@@ -31,7 +32,11 @@ int32_t STORMAPI SErrDisplayError(uint32_t errorcode, const char* filename, int3
 
 int32_t STORMCDECL SErrDisplayErrorFmt(uint32_t errorcode, const char* filename, int32_t linenumber, int32_t recoverable, uint32_t exitcode, const char* format, ...);
 
+#ifdef WHOA_STORM_FLAVOR_DIABLO2
+int32_t STORMCDECL SErrIsDisplayingError();
+#else
 int32_t STORMAPI SErrIsDisplayingError();
+#endif
 
 void STORMAPI SErrPrepareAppFatal(const char* filename, int32_t linenumber);
 
@@ -39,7 +44,11 @@ void STORMAPI SErrSetLastError(uint32_t errorcode);
 
 uint32_t STORMAPI SErrGetLastError();
 
+#ifdef WHOA_STORM_FLAVOR_DIABLO2
+BOOL STORMAPI SErrSuppressErrors(int32_t suppress);
+#else
 void STORMAPI SErrSuppressErrors(int32_t suppress);
+#endif
 
 int STORMAPI SErrGetErrorStr(DWORD dwMessageId, char* lpBuffer, DWORD nSize);
 

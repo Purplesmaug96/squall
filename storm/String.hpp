@@ -30,7 +30,11 @@ void STORMAPI SStrDestroy();
 
 char* STORMAPI SStrDupA(const char* string, const char* filename, uint32_t linenumber);
 
+#ifdef WHOA_STORM_FLAVOR_DIABLO2
+DWORD STORMAPI SStrHash(const char* string, uint32_t flags, uint32_t Seed);
+#else
 uint32_t STORMAPI SStrHash(const char* string, uint32_t flags = 0, uint32_t seed = 0);
+#endif
 
 uint32_t STORMAPI SStrHashHT(const char* string);
 
@@ -66,10 +70,8 @@ uint32_t STORMAPI SStrToUnsigned(const char* string);
 
 void STORMAPI SStrUpper(char* string);
 
-// Note: the return values here differ from D2MOO, but they make more sense to me.
+/* char* */ int STORMAPI SStrDup(char* pStr);
 
-char* STORMAPI SStrDup(char* pStr);
-
-char* STORMAPI SStrNCat(char* pBase, const char* pAppend, int nMaxLength);
+/* char* */ int STORMAPI SStrNCat(char* pBase, const char* pAppend, int nMaxLength);
 
 #endif

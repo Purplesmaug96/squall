@@ -25,6 +25,10 @@ typedef struct HWND__* HWND;
 #endif
 #endif
 
+#ifdef WHOA_STORM_FLAVOR_DIABLO2
+int32_t STORMCDECL StormDestroy();
+#else
 int32_t STORMAPI StormDestroy();
+#endif
 
 #endif
