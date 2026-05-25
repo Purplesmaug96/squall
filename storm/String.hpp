@@ -42,7 +42,11 @@ int64_t STORMAPI SStrHash64(const char* string, uint32_t flags = 0, int64_t seed
 
 size_t STORMAPI SStrLen(const char* string);
 
+#ifdef WHOA_STORM_FLAVOR_DIABLO2
+int STORMAPI SStrLower(char* string);
+#else
 void STORMAPI SStrLower(char* string);
+#endif
 
 uint32_t STORMAPI SStrPack(char* dest, const char* source, uint32_t destsize);
 
@@ -68,7 +72,11 @@ int32_t STORMAPI SStrToInt(const char* string);
 
 uint32_t STORMAPI SStrToUnsigned(const char* string);
 
+#ifdef WHOA_STORM_FLAVOR_DIABLO2
+char* STORMAPI SStrUpper(char* string);
+#else
 void STORMAPI SStrUpper(char* string);
+#endif
 
 /* char* */ int STORMAPI SStrDup(char* pStr);
 

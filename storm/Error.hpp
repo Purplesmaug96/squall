@@ -42,7 +42,11 @@ void STORMAPI SErrPrepareAppFatal(const char* filename, int32_t linenumber);
 
 void STORMAPI SErrSetLastError(uint32_t errorcode);
 
+#ifdef WHOA_STORM_FLAVOR_DIABLO2
+DWORD STORMCDECL SErrGetLastError();
+#else
 uint32_t STORMAPI SErrGetLastError();
+#endif
 
 #ifdef WHOA_STORM_FLAVOR_DIABLO2
 BOOL STORMAPI SErrSuppressErrors(int32_t suppress);
