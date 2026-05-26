@@ -385,7 +385,7 @@ char* STORMAPI SStrDupA(const char* string, const char* filename, uint32_t linen
 #ifdef WHOA_STORM_FLAVOR_DIABLO2
 DWORD STORMAPI SStrHash(const char* string, uint32_t flags, uint32_t Seed) {
 #else
-uint32_t STORMAPI SStrHash(const char* string, uint32_t flags = 0, uint32_t seed = 0) {
+uint32_t STORMAPI SStrHash(const char* string, uint32_t flags, uint32_t seed) {
 #endif
     STORM_VALIDATE_BEGIN;
     STORM_VALIDATE(string);
@@ -894,9 +894,9 @@ void STORMAPI SStrUpper(char* string) {
 }
 
 /* char* */ int STORMAPI SStrDup(char* pStr) {
-    return strdup(pStr);
+    return (int)(intptr_t)strdup(pStr);
 }
 
 /* char* */ int STORMAPI SStrNCat(char* pBase, const char* pAppend, int nMaxLength) {
-    return strncat(pBase, pAppend, nMaxLength);
+    return (int)(intptr_t)strncat(pBase, pAppend, nMaxLength);
 }

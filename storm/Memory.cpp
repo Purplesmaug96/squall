@@ -76,9 +76,9 @@ void STORMAPI SMemFill(void* ptr, size_t bytes, uint8_t value) {
 }
 
 #ifdef WHOA_STORM_FLAVOR_DIABLO2
-BOOL STORMAPI SMemFree(void* ptr, const char* filename, int32_t linenumber, uint32_t flags = 0) {
+BOOL STORMAPI SMemFree(void* ptr, const char* filename, int32_t linenumber, uint32_t flags) {
 #else
-void STORMAPI SMemFree(void* ptr, const char* filename, int32_t linenumber, uint32_t flags = 0) {
+void STORMAPI SMemFree(void* ptr, const char* filename, int32_t linenumber, uint32_t flags) {
 #endif
 
     if (ptr) {
