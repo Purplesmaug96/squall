@@ -22,7 +22,7 @@ struct RECTF {
 // NOTE: WINAPI's RECT uses `long`.
 #include <Windows.h>
 #else
-#ifndef __windows_shim
+#ifndef libwin
 struct RECT {
     int32_t left, top, right, bottom;
 };

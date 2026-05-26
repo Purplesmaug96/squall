@@ -3,7 +3,7 @@
 #ifdef WHOA_SYSTEM_WIN
 #include <Windows.h>
 #else
-#ifndef __windows_shim
+#ifndef libwin
 #include <stdint.h>
 typedef uint32_t BOOL;
 typedef void* HKEY;

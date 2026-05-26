@@ -14,7 +14,7 @@
 #endif
 
 #if !defined(WHOA_SYSTEM_WIN)
-#ifndef __windows_shim
+#ifndef libwin
 typedef void* HANDLE;
 typedef void* LPOVERLAPPED;
 typedef struct HWND__* HWND;

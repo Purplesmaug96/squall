@@ -2,7 +2,7 @@
 
 #include "Core.hpp"
 
-#ifdef __windows_shim
+#ifdef libwin
 #include <windef.h>
 #else
 typedef int BOOL;
