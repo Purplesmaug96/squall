@@ -5,6 +5,10 @@
 #include <cstdlib>
 #include "Core.hpp"
 
+#ifndef WHOA_SYSTEM_WIN
+typedef uint32_t DWORD;
+#endif
+
 #define STORM_MAX_PATH 260
 #define STORM_MAX_STR 0x7FFFFFFF
 

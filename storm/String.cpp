@@ -382,12 +382,20 @@ char* STORMAPI SStrDupA(const char* string, const char* filename, uint32_t linen
     return dup;
 }
 
-uint32_t STORMAPI SStrHash(const char* string, uint32_t flags, uint32_t seed) {
+#ifdef WHOA_STORM_FLAVOR_DIABLO2
+DWORD STORMAPI SStrHash(const char* string, uint32_t flags, uint32_t Seed) {
+#else
+uint32_t STORMAPI SStrHash(const char* string, uint32_t flags = 0, uint32_t seed = 0) {
+#endif
     STORM_VALIDATE_BEGIN;
     STORM_VALIDATE(string);
     STORM_VALIDATE_END;
 
-    uint32_t result = seed ? seed : 0x7FED7FED;
+	#ifdef WHOA_STORM_FLAVOR_DIABLO2
+    uint32_t result = Seed ? Seed : 0x7FED7FED;
+	#else
+	uint32_t result = seed ? seed : 0x7FED7FED;
+	#endif
     uint32_t adjust = 0xEEEEEEEE;
     uint32_t ch;
 
@@ -506,11 +514,19 @@ size_t STORMAPI SStrLen(const char* string) {
     return stringEnd - string;
 }
 
+
+#ifdef WHOA_STORM_FLAVOR_DIABLO2
+int STORMAPI SStrLower(char* string) {
+#else
 void STORMAPI SStrLower(char* string) {
+#endif
     while (*string) {
         *string = static_cast<char>(tolower(*string));
         string++;
     }
+	#ifdef WHOA_STORM_FLAVOR_DIABLO2
+	return 0;
+	#endif
 }
 
 uint32_t STORMAPI SStrPack(char* dest, const char* source, uint32_t destsize) {
@@ -863,19 +879,24 @@ uint32_t STORMAPI SStrToUnsigned(const char* string) {
     return result;
 }
 
+#ifdef WHOA_STORM_FLAVOR_DIABLO2
+char* STORMAPI SStrUpper(char* string) {
+#else
 void STORMAPI SStrUpper(char* string) {
+#endif
     while (*string) {
         *string = static_cast<char>(toupper(*string));
         string++;
     }
+	#ifdef WHOA_STORM_FLAVOR_DIABLO2
+	return string;
+	#endif
 }
 
-// Note: the return values here differ from D2MOO, but they make more sense to me.
-
-char* STORMAPI SStrDup(char* pStr) {
+/* char* */ int STORMAPI SStrDup(char* pStr) {
     return strdup(pStr);
 }
 
-char* STORMAPI SStrNCat(char* pBase, const char* pAppend, int nMaxLength) {
+/* char* */ int STORMAPI SStrNCat(char* pBase, const char* pAppend, int nMaxLength) {
     return strncat(pBase, pAppend, nMaxLength);
 }

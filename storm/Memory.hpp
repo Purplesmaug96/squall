@@ -6,6 +6,10 @@
 #include <new>
 #include "Core.hpp"
 
+#ifndef WHOA_SYSTEM_WIN
+typedef int BOOL;
+#endif
+
 #define SMEM_FLAG_ZEROMEMORY 0x8
 
 #define STORM_ALLOC(bytes)  \

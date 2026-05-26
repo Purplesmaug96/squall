@@ -75,14 +75,33 @@ void STORMAPI SMemFill(void* ptr, size_t bytes, uint8_t value) {
     memset(ptr, value, bytes);
 }
 
-void STORMAPI SMemFree(void* ptr, const char* filename, int32_t linenumber, uint32_t flags) {
+#ifdef WHOA_STORM_FLAVOR_DIABLO2
+BOOL STORMAPI SMemFree(void* ptr, const char* filename, int32_t linenumber, uint32_t flags = 0) {
+#else
+void STORMAPI SMemFree(void* ptr, const char* filename, int32_t linenumber, uint32_t flags = 0) {
+#endif
+
     if (ptr) {
         free(ptr);
+		#ifdef WHOA_STORM_FLAVOR_DIABLO2
+		return true;
+		#endif
     }
+
+	#ifdef WHOA_STORM_FLAVOR_DIABLO2
+	return false;
+	#endif
 }
 
+#ifdef WHOA_STORM_FLAVOR_DIABLO2
+int STORMAPI SMemMove(void* dst, void* src, size_t bytes) {
+#else
 void STORMAPI SMemMove(void* dst, void* src, size_t bytes) {
+#endif
     memmove(dst, src, bytes);
+	#ifdef WHOA_STORM_FLAVOR_DIABLO2
+	return 0;
+	#endif
 }
 
 void* STORMAPI SMemReAlloc(void* ptr, size_t bytes, const char* filename, int32_t linenumber, uint32_t flags) {
@@ -117,9 +136,17 @@ void* STORMAPI SMemReAlloc(void* ptr, size_t bytes, const char* filename, int32_
     }
 }
 
+#ifdef WHOA_STORM_FLAVOR_DIABLO2
+int STORMAPI SMemZero(void* ptr, size_t bytes) {
+#else
 void STORMAPI SMemZero(void* ptr, size_t bytes) {
+#endif
     uint8_t* ptrdata = static_cast<uint8_t*>(ptr);
-    for (size_t i = 0; i < bytes; i++) {
+    size_t i;
+	for (i = 0; i < bytes; i++) {
         ptrdata[i] = 0;
     }
+	#ifdef WHOA_STORM_FLAVOR_DIABLO2
+	return i;
+	#endif
 }
