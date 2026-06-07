@@ -30,4 +30,4 @@
 
 #define SFileGetFileName(hFile, buffer, length) strncpy(buffer, "Unknown", length)
 
-// #endif
+#endif
