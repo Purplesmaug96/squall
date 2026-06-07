@@ -104,8 +104,12 @@ void STORMAPI SMemMove(void* dst, void* src, size_t bytes) {
 	#endif
 }
 
+#ifdef WHOA_STORM_FLAVOR_DIABLO2
+void* STORMAPI SMemReAlloc(void* ptr, unsigned int bytes, char const* filename, int linenumber, unsigned int flags) {
+#else
 void* STORMAPI SMemReAlloc(void* ptr, size_t bytes, const char* filename, int32_t linenumber, uint32_t flags) {
-    if (flags == 0xB00BEEE5) {
+#endif
+	if (flags == 0xB00BEEE5) {
         return nullptr;
     }
 

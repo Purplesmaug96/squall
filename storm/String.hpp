@@ -5,7 +5,9 @@
 #include <cstdlib>
 #include "Core.hpp"
 
-#ifndef WHOA_SYSTEM_WIN
+#ifdef WHOA_SYSTEM_WIN
+#include <windows.h>
+#else
 typedef uint32_t DWORD;
 #endif
 

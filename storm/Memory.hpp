@@ -6,7 +6,9 @@
 #include <new>
 #include "Core.hpp"
 
-#ifndef WHOA_SYSTEM_WIN
+#ifdef WHOA_SYSTEM_WIN
+#include <windows.h>
+#else
 typedef int BOOL;
 #endif
 
@@ -45,7 +47,11 @@ void STORMAPI SMemFree(void* ptr, const char* filename, int32_t linenumber, uint
 void STORMAPI SMemMove(void* dst, void* src, size_t bytes);
 #endif
 
+#ifdef WHOA_STORM_FLAVOR_DIABLO2
+void* STORMAPI SMemReAlloc(void* ptr, unsigned bytes, char const* filename, int linenumber, unsigned int flags = 0);
+#else
 void* STORMAPI SMemReAlloc(void* ptr, size_t bytes, const char* filename, int32_t linenumber, uint32_t flags = 0);
+#endif
 
 #ifdef WHOA_STORM_FLAVOR_DIABLO2
 int STORMAPI SMemZero(void* ptr, size_t bytes);

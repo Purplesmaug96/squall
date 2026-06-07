@@ -1,10 +1,10 @@
 #pragma once
 
-// #ifdef _WIN32
+#ifdef _WIN32
 
-// #include_next "Storm.h"
+#include_next "Storm.h"
 
-// #else
+#else
 
 #include "storm/String.hpp"
 #include "storm/Memory.hpp"
